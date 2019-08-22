@@ -1,0 +1,31 @@
+@charset 'utf-8';
+
+$_font-path: false;
+$_base-font-size-px: 16px !default;
+$_between-lines: (1rem / 2.3) !default;
+
+@import '../../node_modules/sass-basis/src/css/basis-core';
+
+.p-footer-cta {
+  @include _position(fixed, null, 0, 0, 0, 10);
+  background-color: #fff;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  color: #fff;
+  @include _font-size($_base-font-size-px - 4);
+  line-height: 1.5;
+  @include _padding(.25, 0);
+
+  .#{$_prefix}c-row + .#{$_prefix}c-row {
+    @include _padding-top(.25);
+  }
+
+  .#{$_prefix}c-btn {
+    @include _font-size($_base-font-size-px - 2);
+    @include _padding(.5);
+
+    @include _media-min(md) {
+      @include _padding(.5, 1);
+    }
+  }
+}
