@@ -9,11 +9,11 @@ use Inc2734\WP_Customizer_Framework\Framework;
 
 Framework::control(
 	'color',
-	'footer-cta-background-color',
+	'footer-cta-text-color',
 	[
-		'label'    => __( 'Background color', 'snow-monkey-footer-cta' ),
-		'default'  => '#eeeeee',
-		'priority' => 100,
+		'label'    => __( 'Text color', 'snow-monkey-footer-cta' ),
+		'default'  => '#333',
+		'priority' => 110,
 	]
 );
 
@@ -22,6 +22,6 @@ if ( ! is_customize_preview() ) {
 }
 
 $panel   = Framework::get_panel( 'footer-cta' );
-$section = Framework::get_section( 'footer-cta-background' );
-$control = Framework::get_control( 'footer-cta-background-color' );
+$section = Framework::get_section( 'footer-cta-text' );
+$control = Framework::get_control( 'footer-cta-text-color' );
 $control->join( $section )->join( $panel );

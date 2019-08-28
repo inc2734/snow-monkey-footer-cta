@@ -10,5 +10,8 @@ $text = get_theme_mod( 'footer-cta-text' );
 if ( ! $text ) {
 	return;
 }
+?>
 
-echo wp_kses_post( $text );
+<div class="p-footer-cta__text">
+	<?php echo wp_kses_post( $text ); ?>
+</div>

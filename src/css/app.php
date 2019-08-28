@@ -12,6 +12,7 @@ $background_color   = get_theme_mod( 'footer-cta-background-color' );
 $background_opacity = get_theme_mod( 'footer-cta-background-opacity' );
 $primary_btn_background_color   = get_theme_mod( 'footer-cta-primary-btn-background-color' );
 $secondary_btn_background_color = get_theme_mod( 'footer-cta-secondary-btn-background-color' );
+$text_color = get_theme_mod( 'footer-cta-text-color' );
 
 Style::register(
 	'.p-footer-cta',
@@ -46,4 +47,9 @@ Style::register(
 	],
 	'background-color: ' . Color::darken( $secondary_btn_background_color, 0.05 ),
 	'@media (min-width: 64em)'
+);
+
+Style::register(
+	'.p-footer-cta__text',
+	'color: ' . $text_color
 );
