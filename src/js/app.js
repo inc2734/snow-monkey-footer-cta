@@ -12,6 +12,16 @@ document.addEventListener(
       return;
     }
 
+    const getPath = () => {
+      if (typeof snow_monkey.home_url === 'undefined') {
+        return '';
+      }
+      const dummy = document.createElement('a');
+      dummy.href = snow_monkey.home_url;
+      const pathname = dummy.pathname + '/';
+      return pathname.replace('//', '/');
+    };
+
     const closeBtn = wrapper.querySelector('.p-footer-cta__close-btn');
 
     closeBtn.addEventListener(
@@ -25,7 +35,7 @@ document.addEventListener(
           1,
           {
             expires: 1,
-            path: '/',
+            path: getPath(),
           }
         );
       },

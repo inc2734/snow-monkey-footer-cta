@@ -29,14 +29,14 @@ class Front {
 		wp_enqueue_style(
 			'snow-monkey-footer-cta',
 			SNOW_MONKEY_FOOTER_CTA_URL . '/dist/css/app.min.css',
-			[],
+			[ Helper::get_main_style_handle() ],
 			filemtime( SNOW_MONKEY_FOOTER_CTA_PATH . '/dist/css/app.min.css' )
 		);
 
 		wp_enqueue_script(
 			'snow-monkey-footer-cta',
 			SNOW_MONKEY_FOOTER_CTA_URL . '/dist/js/app.min.js',
-			[],
+			[ Helper::get_main_script_handle() ],
 			filemtime( SNOW_MONKEY_FOOTER_CTA_PATH . '/dist/js/app.min.js' )
 		);
 	}
