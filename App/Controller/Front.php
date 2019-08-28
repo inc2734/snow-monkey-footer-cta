@@ -32,6 +32,13 @@ class Front {
 			[],
 			filemtime( SNOW_MONKEY_FOOTER_CTA_PATH . '/dist/css/app.min.css' )
 		);
+
+		wp_enqueue_script(
+			'snow-monkey-footer-cta',
+			SNOW_MONKEY_FOOTER_CTA_URL . '/dist/js/app.min.js',
+			[],
+			filemtime( SNOW_MONKEY_FOOTER_CTA_PATH . '/dist/js/app.min.js' )
+		);
 	}
 
 	/**

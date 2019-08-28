@@ -16,6 +16,31 @@ $_between-lines: (1rem / 2.3) !default;
   line-height: 1.5;
   @include _padding(.25, 0);
 
+  &[aria-hidden="true"] {
+    display: none;
+  }
+
+  &__close-btn {
+    position: absolute;
+    bottom: 100%;
+    left: _space(.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    background-color: rgba(#000, .8);
+    color: #fff;
+    line-height: 1;
+    @include _font-size($_base-font-size-px - 2);
+    @include _square($_base-font-size-px + 2);
+    padding: 0;
+
+    @include _media-min(lg) {
+      left: _space(.5);
+    }
+  }
+
   .#{$_prefix}c-row + .#{$_prefix}c-row {
     @include _padding-top(.25);
   }

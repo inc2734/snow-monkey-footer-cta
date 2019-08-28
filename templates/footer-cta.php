@@ -7,6 +7,11 @@
 
 use Framework\Helper;
 
+$is_hidden = isset( $_COOKIE['snow-monkey-footer-cta-hidden'] ) ? $_COOKIE['snow-monkey-footer-cta-hidden'] : null;
+if ( $is_hidden ) {
+	return;
+}
+
 $text = get_theme_mod( 'footer-cta-text' );
 
 $primary_btn_label = get_theme_mod( 'footer-cta-primary-btn-label' );
@@ -22,7 +27,11 @@ if ( ! $text && ( ! $primary_btn_label || ! $primary_btn_url ) && ( ! $secondary
 }
 ?>
 
-<div class="p-footer-cta" id="footer-sticky-nav">
+<div class="p-footer-cta" id="footer-sticky-nav" aria-hidden="false">
+	<button class="p-footer-cta__close-btn">
+		<i class="fas fa-times" title="<?php echo esc_html_e( 'Close', 'snow-monkey-footer-cta' ); ?>"></i>
+	</button>
+
 	<div class="c-container">
 		<div class="c-row c-row--margin-s c-row--md-margin c-row--middle">
 			<?php if ( ! $text ) : ?>
