@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Snow Monkey Footer CTA\n"
-"POT-Creation-Date: 2019-08-22 22:26+0900\n"
-"PO-Revision-Date: 2019-08-22 22:28+0900\n"
+"POT-Creation-Date: 2019-08-28 15:15+0900\n"
+"PO-Revision-Date: 2019-08-28 15:15+0900\n"
 "Last-Translator: inc2734 <inc@2inc.org>\n"
 "Language-Team: inc2734 <inc@2inc.org>\n"
 "Language: ja\n"
@@ -21,6 +21,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "X-Poedit-SearchPathExcluded-1: .themes\n"
+"X-Poedit-SearchPathExcluded-2: vendor\n"
 
 #: customizer/footer-cta/panel.php:17
 msgid "Footer CTA"
@@ -68,6 +69,10 @@ msgstr "プライマリーボタン"
 msgid "Secondary button"
 msgstr "セカンダリーボタン"
 
+#: customizer/footer-cta/sections/text/controls/color.php:14
+msgid "Text color"
+msgstr "文字色"
+
 #: customizer/footer-cta/sections/text/controls/text.php:14
 #: customizer/footer-cta/sections/text/section.php:17
 msgid "Text"
@@ -80,6 +85,10 @@ msgstr "[Snow Monkey Footer CTA] Snow Monkeyが必要です。"
 #: snow-monkey-footer-cta.php:88
 msgid "[Snow Monkey Footer CTA] Needs the Snow Monkey v7.9 or more."
 msgstr "[Snow Monkey Footer CTA] Snow Monkey v7.9以上が必要です。"
+
+#: templates/footer-cta.php:32
+msgid "Close"
+msgstr "閉じる"
 
 #. Plugin Name of the plugin/theme
 msgid "Snow Monkey Footer CTA"
