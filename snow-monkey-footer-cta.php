@@ -39,7 +39,7 @@ class Bootstrap {
 			return;
 		}
 
-		if ( ! version_compare( $theme->get( 'Version' ), '7.10.4', '>=' ) ) {
+		if ( ! version_compare( $theme->get( 'Version' ), '7.10.5', '>=' ) ) {
 			add_action( 'admin_notices', [ $this, '_admin_notice_invalid_snow_monkey_version' ] );
 			return;
 		}
