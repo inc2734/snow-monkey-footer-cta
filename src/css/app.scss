@@ -17,7 +17,7 @@ $_between-lines: (1rem / 2.3) !default;
   @include _padding(.25, 0);
 
   &[aria-hidden="true"] {
-    display: none;
+    visibility: hidden;
   }
 
   &__close-btn {

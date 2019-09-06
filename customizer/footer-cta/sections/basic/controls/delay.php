@@ -8,12 +8,12 @@
 use Inc2734\WP_Customizer_Framework\Framework;
 
 Framework::control(
-	'color',
-	'footer-cta-background-color',
+	'number',
+	'footer-cta-delay',
 	[
-		'label'    => __( 'Background color', 'snow-monkey-footer-cta' ),
-		'default'  => '#eeeeee',
-		'priority' => 100,
+		'label'    => __( 'Scroll amount(px) to display', 'snow-monkey-footer-cta' ),
+		'default'  => 0,
+		'priority' => 120,
 	]
 );
 
@@ -22,6 +22,6 @@ if ( ! is_customize_preview() ) {
 }
 
 $panel   = Framework::get_panel( 'footer-cta' );
-$section = Framework::get_section( 'footer-cta-background' );
-$control = Framework::get_control( 'footer-cta-background-color' );
+$section = Framework::get_section( 'footer-cta-basic' );
+$control = Framework::get_control( 'footer-cta-delay' );
 $control->join( $section )->join( $panel );

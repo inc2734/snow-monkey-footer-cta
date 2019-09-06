@@ -13,7 +13,7 @@ Framework::control(
 	[
 		'label'    => __( 'Opacity (%)', 'snow-monkey-footer-cta' ),
 		'default'  => 100,
-		'priority' => 100,
+		'priority' => 110,
 		'input_attrs' => [
 			'min'  => 10,
 			'step' => 10,
@@ -27,6 +27,6 @@ if ( ! is_customize_preview() ) {
 }
 
 $panel   = Framework::get_panel( 'footer-cta' );
-$section = Framework::get_section( 'footer-cta-background' );
+$section = Framework::get_section( 'footer-cta-basic' );
 $control = Framework::get_control( 'footer-cta-background-opacity' );
 $control->join( $section )->join( $panel );

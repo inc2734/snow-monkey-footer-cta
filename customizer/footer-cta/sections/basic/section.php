@@ -12,9 +12,9 @@ if ( ! is_customize_preview() ) {
 }
 
 Framework::section(
-	'footer-cta-background',
+	'footer-cta-basic',
 	[
-		'title'    => __( 'Background', 'snow-monkey-footer-cta' ),
+		'title'    => __( 'Basic settings', 'snow-monkey-footer-cta' ),
 		'priority' => 100,
 	]
 );

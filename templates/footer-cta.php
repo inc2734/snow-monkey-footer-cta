@@ -27,7 +27,7 @@ if ( ! $text && ( ! $primary_btn_label || ! $primary_btn_url ) && ( ! $secondary
 }
 ?>
 
-<div class="p-footer-cta" id="footer-sticky-nav" aria-hidden="false">
+<div class="p-footer-cta" id="footer-sticky-nav" aria-hidden="true">
 	<button class="p-footer-cta__close-btn">
 		<i class="fas fa-times" title="<?php echo esc_html_e( 'Close', 'snow-monkey-footer-cta' ); ?>"></i>
 	</button>

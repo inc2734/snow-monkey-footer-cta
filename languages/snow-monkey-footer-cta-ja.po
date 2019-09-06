@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Snow Monkey Footer CTA\n"
-"POT-Creation-Date: 2019-08-28 15:15+0900\n"
-"PO-Revision-Date: 2019-08-28 15:15+0900\n"
+"POT-Creation-Date: 2019-09-06 11:13+0900\n"
+"PO-Revision-Date: 2019-09-06 11:13+0900\n"
 "Last-Translator: inc2734 <inc@2inc.org>\n"
 "Language-Team: inc2734 <inc@2inc.org>\n"
 "Language: ja\n"
@@ -27,19 +27,23 @@ msgstr ""
 msgid "Footer CTA"
 msgstr "フッター CTA"
 
-#: customizer/footer-cta/sections/background/controls/color.php:14
+#: customizer/footer-cta/sections/basic/controls/color.php:14
 #: customizer/footer-cta/sections/primary-btn/controls/background-color.php:14
 #: customizer/footer-cta/sections/secondary-btn/controls/background-color.php:14
 msgid "Background color"
 msgstr "背景色"
 
-#: customizer/footer-cta/sections/background/controls/opacity.php:14
+#: customizer/footer-cta/sections/basic/controls/delay.php:14
+msgid "Scroll amount(px) to display"
+msgstr "表示するまでのスクロール量（px）"
+
+#: customizer/footer-cta/sections/basic/controls/opacity.php:14
 msgid "Opacity (%)"
 msgstr "透明度（%）"
 
-#: customizer/footer-cta/sections/background/section.php:17
-msgid "Background"
-msgstr "背景"
+#: customizer/footer-cta/sections/basic/section.php:17
+msgid "Basic settings"
+msgstr "基本設定"
 
 #: customizer/footer-cta/sections/primary-btn/controls/label.php:14
 #: customizer/footer-cta/sections/secondary-btn/controls/label.php:14
@@ -109,3 +113,6 @@ msgstr "inc2734"
 #. Author URI of the plugin/theme
 msgid "https://2inc.org"
 msgstr "https://2inc.org"
+
+#~ msgid "Background"
+#~ msgstr "背景"

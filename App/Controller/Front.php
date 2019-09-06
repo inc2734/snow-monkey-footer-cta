@@ -39,6 +39,14 @@ class Front {
 			[ Helper::get_main_script_handle() ],
 			filemtime( SNOW_MONKEY_FOOTER_CTA_PATH . '/dist/js/app.min.js' )
 		);
+
+		wp_localize_script(
+			'snow-monkey-footer-cta',
+			'snow_monkey_footer_cta',
+			[
+				'delay' => get_theme_mod( 'footer-cta-delay' ),
+			]
+		);
 	}
 
 	/**
