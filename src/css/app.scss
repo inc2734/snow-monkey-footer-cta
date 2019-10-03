@@ -27,22 +27,38 @@ $_between-lines: (1rem / 2.3) !default;
 
   &__close-btn {
     position: absolute;
-    bottom: 100%;
-    left: _space(.25);
+    top: $_base-font-size-px * -1.5 / 2;
+    left: 2px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     border: none;
+    border-radius: 100%;
     background-color: rgba(#000, .8);
     color: #fff;
     line-height: 1;
     @include _font-size($_base-font-size-px - 2);
-    @include _square($_base-font-size-px + 2);
+    @include _square($_base-font-size-px * 1.5);
     padding: 0;
+    opacity: 1;
+    @include _transition(opacity);
 
     @include _media-min(lg) {
-      left: _space(.5);
+      left: _space(.25);
+      opacity: .4;
+    }
+
+    @include _hover(lg) {
+      opacity: 1;
+    }
+
+    &::before {
+      @include _position(absolute, 50%, null, null, 50%);
+      @include _square(44px);
+      content: '';
+      display: block;
+      transform: translate(-50%, -50%);
     }
   }
 
