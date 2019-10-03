@@ -85,7 +85,7 @@ class Bootstrap {
 		?>
 		<div class="notice notice-warning is-dismissible">
 			<p>
-				<?php esc_html_e( '[Snow Monkey Footer CTA] Needs the Snow Monkey v7.9 or more.', 'snow-monkey-footer-cta' ); ?>
+				<?php esc_html_e( '[Snow Monkey Footer CTA] Needs the Snow Monkey v7.10.5 or more.', 'snow-monkey-footer-cta' ); ?>
 			</p>
 		</div>
 		<?php
