@@ -18,6 +18,7 @@ class Front {
 		add_filter( 'snow_monkey_template_part_root_hierarchy', [ $this, '_template_part_root_hierarchy' ], 10, 2 );
 		add_action( 'snow_monkey_get_template_part_template-parts/nav/footer-sticky', '__return_false' );
 		add_action( 'wp_footer', [ $this, '_display_footer_cta' ] );
+		add_action( 'wp_footer', [ $this, '_display_delay_point' ] );
 	}
 
 	/**
@@ -36,8 +37,9 @@ class Front {
 		wp_enqueue_script(
 			'snow-monkey-footer-cta',
 			SNOW_MONKEY_FOOTER_CTA_URL . '/dist/js/app.min.js',
-			[ Helper::get_main_script_handle() ],
-			filemtime( SNOW_MONKEY_FOOTER_CTA_PATH . '/dist/js/app.min.js' )
+			[ Helper::get_main_script_handle() . '-footer-sticky-nav' ],
+			filemtime( SNOW_MONKEY_FOOTER_CTA_PATH . '/dist/js/app.min.js' ),
+			true
 		);
 
 		wp_localize_script(
@@ -80,5 +82,18 @@ class Front {
 	 */
 	public function _display_footer_cta() {
 		Helper::get_template_part( 'footer-cta' );
+	}
+
+	/**
+	 * Display div tag to delay point
+	 *
+	 * @return void
+	 */
+	public function _display_delay_point() {
+		$delay = get_theme_mod( 'footer-cta-delay' );
+		$top   = $delay ? 'calc(100vh + ' . $delay . 'px' : 0;
+		?>
+		<div id="footer-cta-delay" style="top: <?php echo esc_attr( $top ); ?>"></div>
+		<?php
 	}
 }

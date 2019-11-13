@@ -14,9 +14,11 @@ $_between-lines: (1rem / 2.3) !default;
   line-height: 1.5;
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
+  @include _transition(opacity);
 
   &[aria-hidden="true"] {
     visibility: hidden;
+    opacity: 0;
   }
 
   &[data-clickable="false"] {
@@ -79,4 +81,11 @@ $_between-lines: (1rem / 2.3) !default;
       @include _padding(.5, 1);
     }
   }
+}
+
+#footer-cta-delay {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  visibility: hidden;
 }

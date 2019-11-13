@@ -39,7 +39,7 @@ class Bootstrap {
 			return;
 		}
 
-		if ( ! version_compare( $theme->get( 'Version' ), '7.10.5', '>=' ) ) {
+		if ( ! version_compare( $theme->get( 'Version' ), '8.0.6', '>=' ) ) {
 			add_action( 'admin_notices', [ $this, '_admin_notice_invalid_snow_monkey_version' ] );
 			return;
 		}
@@ -85,7 +85,7 @@ class Bootstrap {
 		?>
 		<div class="notice notice-warning is-dismissible">
 			<p>
-				<?php esc_html_e( '[Snow Monkey Footer CTA] Needs the Snow Monkey v7.10.5 or more.', 'snow-monkey-footer-cta' ); ?>
+				<?php esc_html_e( '[Snow Monkey Footer CTA] Needs the Snow Monkey v8.0.6 or more.', 'snow-monkey-footer-cta' ); ?>
 			</p>
 		</div>
 		<?php
