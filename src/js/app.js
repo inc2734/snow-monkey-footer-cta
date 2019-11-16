@@ -9,6 +9,34 @@ const onDOMContentLoaded = () => {
     return;
   }
 
+  const observerCallback = (entries) => {
+    let boundingClientRectY = 0;
+    entries.forEach(
+      (entry) => {
+        const oldAriaHidden = wrapper.getAttribute('aria-hidden');
+        if (entry.rootBounds.height <= entry.boundingClientRect.y) {
+          if ('true' !== oldAriaHidden) {
+            wrapper.setAttribute('aria-hidden', 'true');
+            addCustomEvent(wrapper, 'initFooterStickyNav');
+          }
+        } else {
+          if ('false' !== oldAriaHidden) {
+            wrapper.setAttribute('aria-hidden', 'false');
+            addCustomEvent(wrapper, 'initFooterStickyNav');
+          }
+        }
+      }
+    );
+  };
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: [0, 1],
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
   const setHiddenCookie = () => {
     const getPath = () => {
       if (typeof snow_monkey.home_url === 'undefined') {
@@ -31,10 +59,10 @@ const onDOMContentLoaded = () => {
   };
 
   const onCloseBtnClick = (event) => {
-    document.removeEventListener('scroll', onScroll, false);
-    setAriaHidden(wrapper, 'true');
+    wrapper.setAttribute('aria-hidden', 'true');
     document.body.style['marginBottom'] = '';
     setHiddenCookie();
+    observer.unobserve(delayPoint);
   };
 
   const closeBtn = wrapper.querySelector('.p-footer-cta__close-btn');
@@ -42,40 +70,9 @@ const onDOMContentLoaded = () => {
     closeBtn.addEventListener('click', onCloseBtnClick, false);
   }
 
-  const observe = () => {
-    const observerCallback = (entries) => {
-      let boundingClientRectY = 0;
-      entries.forEach(
-        (entry) => {
-          const oldAriaHidden = wrapper.getAttribute('aria-hidden');
-          if (entry.rootBounds.height <= entry.boundingClientRect.y) {
-            if ('true' !== oldAriaHidden) {
-              wrapper.setAttribute('aria-hidden', 'true');
-              addCustomEvent(wrapper, 'initFooterStickyNav');
-            }
-          } else {
-            if ('false' !== oldAriaHidden) {
-              wrapper.setAttribute('aria-hidden', 'false');
-              addCustomEvent(wrapper, 'initFooterStickyNav');
-            }
-          }
-        }
-      );
-    };
-
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: [0, 1],
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-    observer.observe(delayPoint);
-  };
-
   const delayPoint = document.getElementById('footer-cta-delay');
   if (delayPoint && 'undefined' !== typeof IntersectionObserver) {
-    observe();
+    observer.observe(delayPoint);
   }
 };
 
