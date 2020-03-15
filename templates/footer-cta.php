@@ -8,7 +8,8 @@
 use Framework\Helper;
 
 $is_hidden = isset( $_COOKIE['snow-monkey-footer-cta-hidden'] ) ? $_COOKIE['snow-monkey-footer-cta-hidden'] : null;
-if ( $is_hidden ) {
+$is_customize_preview = is_customize_preview();
+if ( $is_hidden && ! $is_customize_preview ) {
 	return;
 }
 
