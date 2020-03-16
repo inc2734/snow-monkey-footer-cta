@@ -8,8 +8,20 @@
 $label = get_theme_mod( 'footer-cta-primary-btn-label' );
 $url   = get_theme_mod( 'footer-cta-primary-btn-url' );
 
-if ( ! $url || ! $label ) {
+$label_pc = get_theme_mod( 'footer-cta-primary-btn-pc-label' );
+$url_pc   = get_theme_mod( 'footer-cta-primary-btn-pc-url' );
+
+if ( ! $label || ! $url ) {
 	return;
+}
+
+$classes = [
+	'c-btn',
+	'c-btn--full',
+	'p-footer-cta__primary-btn',
+];
+if ( $label_pc && $url_pc ) {
+	$classes[] = 'u-hidden-md-up';
 }
 
 $attributes = [];
@@ -22,11 +34,44 @@ if ( get_theme_mod( 'footer-cta-primary-btn-blank' ) ) {
 ?>
 
 <a
-	class="c-btn c-btn--full p-footer-cta__primary-btn"
+	class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>"
 	href="<?php echo esc_url( $url ); ?>"
 	<?php foreach ( $attributes as $attribute => $value ) : ?>
 		<?php echo esc_html( $attribute ); ?>="<?php echo esc_attr( $value ); ?>"
 	<?php endforeach; ?>
 >
 	<?php echo esc_html( $label ); ?>
+</a>
+
+<?php
+if ( ! $label_pc || ! $url_pc ) {
+	return;
+}
+
+$classes = [
+	'c-btn',
+	'c-btn--full',
+	'p-footer-cta__primary-btn',
+	'p-footer-cta__primary-btn--pc',
+	'u-hidden',
+	'u-visible-md-up',
+];
+
+$attributes = [];
+if ( get_theme_mod( 'footer-cta-primary-btn-pc-blank' ) ) {
+	$attributes = [
+		'target' => '_blank',
+		'rel'    => 'noopener',
+	];
+}
+?>
+
+<a
+	class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>"
+	href="<?php echo esc_url( $url_pc ); ?>"
+	<?php foreach ( $attributes as $attribute => $value ) : ?>
+		<?php echo esc_html( $attribute ); ?>="<?php echo esc_attr( $value ); ?>"
+	<?php endforeach; ?>
+>
+	<?php echo esc_html( $label_pc ); ?>
 </a>

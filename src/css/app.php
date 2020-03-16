@@ -12,6 +12,8 @@ $background_color   = get_theme_mod( 'footer-cta-background-color' );
 $background_opacity = get_theme_mod( 'footer-cta-background-opacity' );
 $primary_btn_background_color   = get_theme_mod( 'footer-cta-primary-btn-background-color' );
 $secondary_btn_background_color = get_theme_mod( 'footer-cta-secondary-btn-background-color' );
+$primary_btn_pc_background_color   = get_theme_mod( 'footer-cta-primary-btn-pc-background-color' );
+$secondary_btn_pc_background_color = get_theme_mod( 'footer-cta-secondary-btn-pc-background-color' );
 $text_color = get_theme_mod( 'footer-cta-text-color' );
 
 Style::register(
@@ -25,6 +27,11 @@ Style::register(
 );
 
 Style::register(
+	'.p-footer-cta__primary-btn--pc',
+	'background-color: ' . $primary_btn_pc_background_color
+);
+
+Style::register(
 	[
 		'.p-footer-cta__primary-btn:hover',
 		'.p-footer-cta__primary-btn:active',
@@ -35,8 +42,23 @@ Style::register(
 );
 
 Style::register(
+	[
+		'.p-footer-cta__primary-btn--pc:hover',
+		'.p-footer-cta__primary-btn--pc:active',
+		'.p-footer-cta__primary-btn--pc:focus',
+	],
+	'background-color: ' . Color::darken( $primary_btn_pc_background_color, 0.05 ),
+	'@media (min-width: 64em)'
+);
+
+Style::register(
 	'.p-footer-cta__secondary-btn',
 	'background-color: ' . $secondary_btn_background_color
+);
+
+Style::register(
+	'.p-footer-cta__secondary-btn--pc',
+	'background-color: ' . $secondary_btn_pc_background_color
 );
 
 Style::register(
@@ -46,6 +68,16 @@ Style::register(
 		'.p-footer-cta__secondary-btn:focus',
 	],
 	'background-color: ' . Color::darken( $secondary_btn_background_color, 0.05 ),
+	'@media (min-width: 64em)'
+);
+
+Style::register(
+	[
+		'.p-footer-cta__secondary-btn--pc:hover',
+		'.p-footer-cta__secondary-btn--pc:active',
+		'.p-footer-cta__secondary-btn--pc:focus',
+	],
+	'background-color: ' . Color::darken( $secondary_btn_pc_background_color, 0.05 ),
 	'@media (min-width: 64em)'
 );
 

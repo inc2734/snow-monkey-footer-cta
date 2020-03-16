@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Snow Monkey Footer CTA\n"
-"POT-Creation-Date: 2019-09-06 11:13+0900\n"
-"PO-Revision-Date: 2019-09-06 11:13+0900\n"
+"POT-Creation-Date: 2020-03-16 09:20+0900\n"
+"PO-Revision-Date: 2020-03-16 09:20+0900\n"
 "Last-Translator: inc2734 <inc@2inc.org>\n"
 "Language-Team: inc2734 <inc@2inc.org>\n"
 "Language: ja\n"
@@ -28,7 +28,9 @@ msgid "Footer CTA"
 msgstr "フッター CTA"
 
 #: customizer/footer-cta/sections/basic/controls/color.php:14
+#: customizer/footer-cta/sections/primary-btn-pc/controls/background-color.php:14
 #: customizer/footer-cta/sections/primary-btn/controls/background-color.php:14
+#: customizer/footer-cta/sections/secondary-btn-pc/controls/background-color.php:14
 #: customizer/footer-cta/sections/secondary-btn/controls/background-color.php:14
 msgid "Background color"
 msgstr "背景色"
@@ -45,29 +47,54 @@ msgstr "透明度（%）"
 msgid "Basic settings"
 msgstr "基本設定"
 
+#: customizer/footer-cta/sections/primary-btn-pc/controls/label.php:14
 #: customizer/footer-cta/sections/primary-btn/controls/label.php:14
+#: customizer/footer-cta/sections/secondary-btn-pc/controls/label.php:14
 #: customizer/footer-cta/sections/secondary-btn/controls/label.php:14
 msgid "Label"
 msgstr "ラベル"
 
+#: customizer/footer-cta/sections/primary-btn-pc/controls/label.php:15
 #: customizer/footer-cta/sections/primary-btn/controls/label.php:15
+#: customizer/footer-cta/sections/secondary-btn-pc/controls/label.php:15
 #: customizer/footer-cta/sections/secondary-btn/controls/label.php:15
 msgid "Button"
 msgstr "ボタン"
 
+#: customizer/footer-cta/sections/primary-btn-pc/controls/target.php:14
 #: customizer/footer-cta/sections/primary-btn/controls/target.php:14
+#: customizer/footer-cta/sections/secondary-btn-pc/controls/target.php:14
 #: customizer/footer-cta/sections/secondary-btn/controls/target.php:14
 msgid "Open new tab"
 msgstr "新しいタブで開く"
 
+#: customizer/footer-cta/sections/primary-btn-pc/controls/url.php:14
 #: customizer/footer-cta/sections/primary-btn/controls/url.php:14
+#: customizer/footer-cta/sections/secondary-btn-pc/controls/url.php:14
 #: customizer/footer-cta/sections/secondary-btn/controls/url.php:14
 msgid "URL"
 msgstr "URL"
 
+#: customizer/footer-cta/sections/primary-btn-pc/section.php:17
+msgid "Primary button (Tablet & PC)"
+msgstr "プライマリーボタン（タブレット＆PC）"
+
+#: customizer/footer-cta/sections/primary-btn-pc/section.php:18
+#: customizer/footer-cta/sections/secondary-btn-pc/section.php:18
+msgid ""
+"If set, use this button on PCs and tablets. This button is not used if "
+"either the label or the URL has not been entered."
+msgstr ""
+"設定されている場合、PCとタブレットではこのボタンを使用します。ラベルとURLの"
+"いずれかが未入力の場合、このボタンは使用されません。"
+
 #: customizer/footer-cta/sections/primary-btn/section.php:17
 msgid "Primary button"
 msgstr "プライマリーボタン"
+
+#: customizer/footer-cta/sections/secondary-btn-pc/section.php:17
+msgid "Secondary button (Tablet & PC)"
+msgstr "セカンダリーボタン（タブレット＆PC）"
 
 #: customizer/footer-cta/sections/secondary-btn/section.php:17
 msgid "Secondary button"
@@ -87,10 +114,10 @@ msgid "[Snow Monkey Footer CTA] Needs the Snow Monkey."
 msgstr "[Snow Monkey Footer CTA] Snow Monkeyが必要です。"
 
 #: snow-monkey-footer-cta.php:88
-msgid "[Snow Monkey Footer CTA] Needs the Snow Monkey v7.9 or more."
-msgstr "[Snow Monkey Footer CTA] Snow Monkey v7.9以上が必要です。"
+msgid "[Snow Monkey Footer CTA] Needs the Snow Monkey v8.0.6 or more."
+msgstr "[Snow Monkey Footer CTA] Snow Monkey v8.0.6以上が必要です。"
 
-#: templates/footer-cta.php:32
+#: templates/footer-cta.php:33
 msgid "Close"
 msgstr "閉じる"
 
