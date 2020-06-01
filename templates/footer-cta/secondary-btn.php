@@ -7,9 +7,11 @@
 
 $label = get_theme_mod( 'footer-cta-secondary-btn-label' );
 $url   = get_theme_mod( 'footer-cta-secondary-btn-url' );
+$blank = get_theme_mod( 'footer-cta-secondary-btn-blank' );
 
 $label_pc = get_theme_mod( 'footer-cta-secondary-btn-pc-label' );
 $url_pc   = get_theme_mod( 'footer-cta-secondary-btn-pc-url' );
+$blank_pc = get_theme_mod( 'footer-cta-secondary-btn-pc-blank' );
 
 if ( ! $label || ! $url ) {
 	return;
@@ -25,7 +27,7 @@ if ( $label_pc && $url_pc ) {
 }
 
 $attributes = [];
-if ( get_theme_mod( 'footer-cta-secondary-btn-blank' ) ) {
+if ( $blank ) {
 	$attributes = [
 		'target' => '_blank',
 		'rel'    => 'noopener',
@@ -58,7 +60,7 @@ $classes = [
 ];
 
 $attributes = [];
-if ( get_theme_mod( 'footer-cta-secondary-btn-pc-blank' ) ) {
+if ( $blank_pc ) {
 	$attributes = [
 		'target' => '_blank',
 		'rel'    => 'noopener',

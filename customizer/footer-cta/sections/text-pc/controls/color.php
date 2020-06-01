@@ -9,13 +9,13 @@ use Inc2734\WP_Customizer_Framework\Framework;
 
 Framework::control(
 	'color',
-	'footer-cta-secondary-btn-pc-background-color',
+	'footer-cta-text-pc-color',
 	[
-		'label'           => __( 'Background color', 'snow-monkey-footer-cta' ),
+		'label'           => __( 'Text color', 'snow-monkey-footer-cta' ),
 		'default'         => false,
-		'priority'        => 100,
+		'priority'        => 110,
 		'active_callback' => function() {
-			return ! ! get_theme_mod( 'footer-cta-secondary-btn-pc-url' );
+			return get_theme_mod( 'footer-cta-text-pc' );
 		},
 	]
 );
@@ -25,6 +25,6 @@ if ( ! is_customize_preview() ) {
 }
 
 $panel   = Framework::get_panel( 'footer-cta' );
-$section = Framework::get_section( 'footer-cta-secondary-btn-pc' );
-$control = Framework::get_control( 'footer-cta-secondary-btn-pc-background-color' );
+$section = Framework::get_section( 'footer-cta-text-pc' );
+$control = Framework::get_control( 'footer-cta-text-pc-color' );
 $control->join( $section )->join( $panel );

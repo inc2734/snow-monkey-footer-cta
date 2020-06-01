@@ -13,7 +13,7 @@ Framework::control(
 	[
 		'label'    => __( 'Background color', 'snow-monkey-footer-cta' ),
 		'default'  => '#fab82b',
-		'priority' => 120,
+		'priority' => 100,
 	]
 );
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Snow Monkey Footer CTA\n"
-"POT-Creation-Date: 2020-03-16 09:20+0900\n"
-"PO-Revision-Date: 2020-03-16 09:20+0900\n"
+"POT-Creation-Date: 2020-06-01 11:48+0900\n"
+"PO-Revision-Date: 2020-06-01 11:49+0900\n"
 "Last-Translator: inc2734 <inc@2inc.org>\n"
 "Language-Team: inc2734 <inc@2inc.org>\n"
 "Language: ja\n"
@@ -100,20 +100,34 @@ msgstr "セカンダリーボタン（タブレット＆PC）"
 msgid "Secondary button"
 msgstr "セカンダリーボタン"
 
+#: customizer/footer-cta/sections/text-pc/controls/color.php:14
 #: customizer/footer-cta/sections/text/controls/color.php:14
 msgid "Text color"
 msgstr "文字色"
 
+#: customizer/footer-cta/sections/text-pc/controls/text.php:14
 #: customizer/footer-cta/sections/text/controls/text.php:14
 #: customizer/footer-cta/sections/text/section.php:17
 msgid "Text"
 msgstr "テキスト"
 
-#: snow-monkey-footer-cta.php:73
+#: customizer/footer-cta/sections/text-pc/section.php:17
+msgid "Text (Tablet & PC)"
+msgstr "テキスト（タブレット＆PC）"
+
+#: customizer/footer-cta/sections/text-pc/section.php:18
+msgid ""
+"If set, use this text on PCs and tablets. This is not used if either the "
+"text has not been entered."
+msgstr ""
+"設定されている場合、PCとタブレットではこのテキストを使用します。テキストが"
+"未入力の場合は使用されません。"
+
+#: snow-monkey-footer-cta.php:80
 msgid "[Snow Monkey Footer CTA] Needs the Snow Monkey."
 msgstr "[Snow Monkey Footer CTA] Snow Monkeyが必要です。"
 
-#: snow-monkey-footer-cta.php:88
+#: snow-monkey-footer-cta.php:95
 msgid "[Snow Monkey Footer CTA] Needs the Snow Monkey v8.0.6 or more."
 msgstr "[Snow Monkey Footer CTA] Snow Monkey v8.0.6以上が必要です。"
 
