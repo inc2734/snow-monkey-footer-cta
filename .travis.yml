@@ -24,6 +24,7 @@ cache:
 install:
 - nvm install 8
 - npm install
+- npm rebuild node-sass
 - composer install
 before_script:
 - bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
