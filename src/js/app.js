@@ -9,6 +9,51 @@ const onDOMContentLoaded = () => {
     return;
   }
 
+  const scrollTop = () => {
+    return document.documentElement.scrollTop || document.body.scrollTop;
+  };
+
+  const throttle = (callback, delay) => {
+    let time = Date.now();
+    return () => {
+      if ((time + delay - Date.now()) < 0) {
+        callback.apply(this, arguments);
+        time = Date.now();
+      }
+    };
+  };
+
+  let ariaHidden = wrapper.getAttribute('aria-hidden');
+
+  const show = () => {
+    ariaHidden = 'false';
+    wrapper.setAttribute('aria-hidden', ariaHidden);
+    addCustomEvent(wrapper, 'initFooterStickyNav');
+  };
+
+  const hide = () => {
+    ariaHidden = 'true';
+    wrapper.setAttribute('aria-hidden', ariaHidden);
+    addCustomEvent(wrapper, 'initFooterStickyNav');
+  };
+
+  const handleScroll = throttle(
+    () => {
+      if (snow_monkey_footer_cta.delay <= scrollTop()) {
+        if ('false' !== ariaHidden) {
+          show();
+        }
+      } else {
+        if ('true' !== ariaHidden) {
+          hide();
+        }
+      }
+    },
+    150
+  );
+
+  window.addEventListener('scroll', handleScroll, false);
+
   const setHiddenCookie = () => {
     const getPath = () => {
       if (typeof snow_monkey.home_url === 'undefined') {
@@ -30,59 +75,11 @@ const onDOMContentLoaded = () => {
     );
   };
 
-  const show = () => {
-    wrapper.setAttribute('aria-hidden', 'false');
-    addCustomEvent(wrapper, 'initFooterStickyNav');
-  };
-
-  const hide = () => {
-    wrapper.setAttribute('aria-hidden', 'true');
-    addCustomEvent(wrapper, 'initFooterStickyNav');
-  };
-
-  if ('undefined' !== typeof IntersectionObserver) {
-    const observerCallback = (entries) => {
-      let boundingClientRectY = 0;
-      entries.forEach(
-        (entry) => {
-          const oldAriaHidden = wrapper.getAttribute('aria-hidden');
-          if (entry.rootBounds.height <= entry.boundingClientRect.y) {
-            if ('true' !== oldAriaHidden) {
-              hide();
-            }
-          } else {
-            if ('false' !== oldAriaHidden) {
-              show();
-            }
-          }
-        }
-      );
-    };
-
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: [0, 1],
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    const delayPoint = document.getElementById('footer-cta-delay');
-    if (!! delayPoint) {
-      observer.observe(delayPoint);
-    }
-  } else {
-    show();
-  }
-
   const onCloseBtnClick = (event) => {
-    wrapper.setAttribute('aria-hidden', 'true');
+    wrapper.parentNode.removeChild(wrapper);
     document.body.style['marginBottom'] = '';
     setHiddenCookie();
-
-    if ('undefined' !== typeof observer) {
-      observer.unobserve(delayPoint);
-    }
+    window.removeEventListener('scroll', handleScroll, false);
   };
 
   const closeBtn = wrapper.querySelector('.p-footer-cta__close-btn');
