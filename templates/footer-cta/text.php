@@ -16,7 +16,7 @@ $classes = [
 	'p-footer-cta__text',
 ];
 if ( $text_pc ) {
-	$classes[] = 'u-hidden-md-up';
+	$classes[] = 'u-invisible-md-up';
 }
 ?>
 
@@ -32,8 +32,7 @@ if ( ! $text_pc ) {
 $classes = [
 	'p-footer-cta__text',
 	'p-footer-cta__text--pc',
-	'u-hidden',
-	'u-visible-md-up',
+	'u-invisible-sm',
 ];
 ?>
 

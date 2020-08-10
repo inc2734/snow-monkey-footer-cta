@@ -2,9 +2,9 @@
 /**
  * Plugin name: Snow Monkey Footer CTA
  * Description: Display CTA to the site footer. When this plug-in is activated, the sticky footer navigation is not displayed.
- * Version: 0.3.3
- * Tested up to: 5.4
- * Requires at least: 5.4
+ * Version: 0.4.0
+ * Tested up to: 5.5
+ * Requires at least: 5.5
  * Requires PHP: 5.6
  * Author: inc2734
  * Author URI: https://2inc.org
@@ -43,7 +43,7 @@ class Bootstrap {
 			return;
 		}
 
-		if ( ! version_compare( $theme->get( 'Version' ), '8.0.6', '>=' ) ) {
+		if ( ! version_compare( $theme->get( 'Version' ), '11.0.0', '>=' ) ) {
 			add_action( 'admin_notices', [ $this, '_admin_notice_invalid_snow_monkey_version' ] );
 			return;
 		}
@@ -92,7 +92,7 @@ class Bootstrap {
 		?>
 		<div class="notice notice-warning is-dismissible">
 			<p>
-				<?php esc_html_e( '[Snow Monkey Footer CTA] Needs the Snow Monkey v8.0.6 or more.', 'snow-monkey-footer-cta' ); ?>
+				<?php esc_html_e( '[Snow Monkey Footer CTA] Needs the Snow Monkey v11.0.0 or more.', 'snow-monkey-footer-cta' ); ?>
 			</p>
 		</div>
 		<?php

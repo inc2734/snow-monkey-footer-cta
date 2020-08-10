@@ -23,7 +23,7 @@ $classes = [
 	'p-footer-cta__secondary-btn',
 ];
 if ( $label_pc && $url_pc ) {
-	$classes[] = 'u-hidden-md-up';
+	$classes[] = 'u-invisible-md-up';
 }
 
 $attributes = [];
@@ -55,8 +55,7 @@ $classes = [
 	'c-btn--full',
 	'p-footer-cta__secondary-btn',
 	'p-footer-cta__secondary-btn--pc',
-	'u-hidden',
-	'u-visible-md-up',
+	'u-invisible-sm',
 ];
 
 $attributes = [];
