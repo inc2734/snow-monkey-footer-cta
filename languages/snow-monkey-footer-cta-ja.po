@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Snow Monkey Footer CTA\n"
-"POT-Creation-Date: 2020-06-01 11:48+0900\n"
-"PO-Revision-Date: 2020-06-01 11:49+0900\n"
+"POT-Creation-Date: 2020-08-11 10:00+0900\n"
+"PO-Revision-Date: 2020-08-11 10:00+0900\n"
 "Last-Translator: inc2734 <inc@2inc.org>\n"
 "Language-Team: inc2734 <inc@2inc.org>\n"
 "Language: ja\n"
@@ -128,8 +128,8 @@ msgid "[Snow Monkey Footer CTA] Needs the Snow Monkey."
 msgstr "[Snow Monkey Footer CTA] Snow Monkeyが必要です。"
 
 #: snow-monkey-footer-cta.php:95
-msgid "[Snow Monkey Footer CTA] Needs the Snow Monkey v8.0.6 or more."
-msgstr "[Snow Monkey Footer CTA] Snow Monkey v8.0.6以上が必要です。"
+msgid "[Snow Monkey Footer CTA] Needs the Snow Monkey v11.0.0 or more."
+msgstr "[Snow Monkey Footer CTA] Snow Monkey v11.0.0 以上が必要です。"
 
 #: templates/footer-cta.php:33
 msgid "Close"
