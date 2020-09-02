@@ -16,7 +16,7 @@ class Front {
 		add_action( 'inc2734_wp_customizer_framework_load_styles', [ $this, '_load_styles' ], 11 );
 
 		add_filter( 'snow_monkey_template_part_root_hierarchy', [ $this, '_template_part_root_hierarchy' ], 10, 2 );
-		add_action( 'snow_monkey_get_template_part_template-parts/nav/footer-sticky', '__return_false' );
+		add_filter( 'snow_monkey_pre_template_part_render_template-parts/nav/footer-sticky', '__return_false' );
 		add_action( 'wp_footer', [ $this, '_display_footer_cta' ] );
 	}
 
