@@ -5,6 +5,8 @@ node_modules/
 /vendor/
 dist/
 *.sql
+/sql/
 snow-monkey-footer-cta/
 snow-monkey-footer-cta.zip
 /.themes/
+.wp-env.override.json

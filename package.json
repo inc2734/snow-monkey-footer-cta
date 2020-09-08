@@ -7,6 +7,7 @@
     "@babel/preset-env": "^7.11.5",
     "@inc2734/add-custom-event": "^0.5.0",
     "@wordpress/browserslist-config": "^2.7.0",
+    "@wordpress/env": "^2.0.0",
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.1.0",
     "cpy-cli": "^3.1.1",
@@ -21,6 +22,11 @@
     "webpack-cli": "^3.3.12"
   },
   "scripts": {
+    "wp-env": "wp-env",
+    "start": "wp-env start && open http://localhost:8888",
+    "stop": "npm run wp db export sql/local.sql && wp-env stop",
+    "cli": "wp-env run cli",
+    "wp": "wp-env run cli wp",
     "clean:css": "rimraf dist/css && mkdir -p dist/css",
     "clean:js": "rimraf dist/js && mkdir -p dist/js",
     "clean:zip": "rimraf snow-monkey-footer-cta.zip",
