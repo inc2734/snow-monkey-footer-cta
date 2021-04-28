@@ -29,10 +29,16 @@ define( 'SNOW_MONKEY_FOOTER_CTA_PATH', untrailingslashit( plugin_dir_path( __FIL
 
 class Bootstrap {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		add_action( 'plugins_loaded', [ $this, '_plugins_loaded' ] );
 	}
 
+	/**
+	 * Plugins loaded.
+	 */
 	public function _plugins_loaded() {
 		load_plugin_textdomain( 'snow-monkey-footer-cta', false, basename( __DIR__ ) . '/languages' );
 

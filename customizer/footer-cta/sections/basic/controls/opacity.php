@@ -11,9 +11,9 @@ Framework::control(
 	'number',
 	'footer-cta-background-opacity',
 	[
-		'label'    => __( 'Opacity (%)', 'snow-monkey-footer-cta' ),
-		'default'  => 100,
-		'priority' => 110,
+		'label'       => __( 'Opacity (%)', 'snow-monkey-footer-cta' ),
+		'default'     => 100,
+		'priority'    => 110,
 		'input_attrs' => [
 			'min'  => 10,
 			'step' => 10,

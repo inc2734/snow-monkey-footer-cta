@@ -11,6 +11,9 @@ use Framework\Helper;
 
 class Front {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		add_action(
 			'after_setup_theme',
@@ -47,9 +50,9 @@ class Front {
 
 		wp_enqueue_script(
 			'snow-monkey-footer-cta',
-			SNOW_MONKEY_FOOTER_CTA_URL . '/dist/js/app.min.js',
+			SNOW_MONKEY_FOOTER_CTA_URL . '/dist/js/app.js',
 			[ Helper::get_main_script_handle() . '-footer-sticky-nav' ],
-			filemtime( SNOW_MONKEY_FOOTER_CTA_PATH . '/dist/js/app.min.js' ),
+			filemtime( SNOW_MONKEY_FOOTER_CTA_PATH . '/dist/js/app.js' ),
 			true
 		);
 
@@ -74,8 +77,7 @@ class Front {
 	/**
 	 * Add hierarchy for footer-cta templates
 	 *
-	 * @param array $hierarchy
-	 * @param string $slug
+	 * @param array $hierarchy Array of template roots.
 	 * @return string
 	 */
 	public function _template_part_root_hierarchy( $hierarchy ) {
