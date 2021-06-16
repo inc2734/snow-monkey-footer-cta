@@ -24,7 +24,7 @@ $text_pc       = get_theme_mod( 'footer-cta-text-pc' );
 $text_pc_color = get_theme_mod( 'footer-cta-text-pc-color' );
 
 Style::register(
-	'.p-footer-cta',
+	'.p-footer-cta.p-footer-cta',
 	'background-color: ' . Color::rgba( $background_color, $background_opacity / 100 )
 );
 
