@@ -23,83 +23,138 @@ $secondary_btn_pc_background_color = get_theme_mod( 'footer-cta-secondary-btn-pc
 $text_pc       = get_theme_mod( 'footer-cta-text-pc' );
 $text_pc_color = get_theme_mod( 'footer-cta-text-pc-color' );
 
-Style::register(
-	'.p-footer-cta.p-footer-cta',
-	'background-color: ' . Color::rgba( $background_color, $background_opacity / 100 )
-);
-
-Style::register(
-	'.p-footer-cta__primary-btn',
-	'background-color: ' . $primary_btn_background_color
-);
-
-Style::register(
+Style::attach(
+	'snow-monkey-footer-cta',
 	[
-		'.p-footer-cta__primary-btn:hover',
-		'.p-footer-cta__primary-btn:active',
-		'.p-footer-cta__primary-btn:focus',
-	],
-	'background-color: ' . Color::darken( $primary_btn_background_color, 0.05 ),
-	'@media (min-width: 64em)'
+		[
+			'selectors'  => [ '.p-footer-cta.p-footer-cta' ],
+			'properties' => [ 'background-color: ' . Color::rgba( $background_color, $background_opacity / 100 ) ],
+		],
+	]
+);
+
+Style::attach(
+	'snow-monkey-footer-cta',
+	[
+		[
+			'selectors'  => [ '.p-footer-cta__primary-btn' ],
+			'properties' => [ 'background-color: ' . $primary_btn_background_color ],
+		],
+	]
+);
+
+Style::attach(
+	'snow-monkey-footer-cta',
+	[
+		[
+			'selectors'   => [
+				'.p-footer-cta__primary-btn:hover',
+				'.p-footer-cta__primary-btn:active',
+				'.p-footer-cta__primary-btn:focus',
+			],
+			'properties'  => [ 'background-color: ' . Color::darken( $primary_btn_background_color, 0.05 ) ],
+			'media_query' => '@media (min-width: 64em)',
+		],
+	]
 );
 
 if ( $primary_btn_pc_url && $primary_btn_pc_background_color ) {
-	Style::register(
-		'.p-footer-cta__primary-btn--pc',
-		'background-color: ' . $primary_btn_pc_background_color
+	Style::attach(
+		'snow-monkey-footer-cta',
+		[
+			[
+				'selectors'  => [ '.p-footer-cta__primary-btn--pc' ],
+				'properties' => [ 'background-color: ' . $primary_btn_pc_background_color ],
+			],
+		]
 	);
 
-	Style::register(
+	Style::attach(
+		'snow-monkey-footer-cta',
 		[
-			'.p-footer-cta__primary-btn--pc:hover',
-			'.p-footer-cta__primary-btn--pc:active',
-			'.p-footer-cta__primary-btn--pc:focus',
-		],
-		'background-color: ' . Color::darken( $primary_btn_pc_background_color, 0.05 ),
-		'@media (min-width: 64em)'
+			[
+				'selectors'   => [
+					'.p-footer-cta__primary-btn--pc:hover',
+					'.p-footer-cta__primary-btn--pc:active',
+					'.p-footer-cta__primary-btn--pc:focus',
+				],
+				'properties'  => [ 'background-color: ' . Color::darken( $primary_btn_pc_background_color, 0.05 ) ],
+				'media_query' => '@media (min-width: 64em)',
+			],
+		]
 	);
 }
 
-Style::register(
-	'.p-footer-cta__secondary-btn',
-	'background-color: ' . $secondary_btn_background_color
+Style::attach(
+	'snow-monkey-footer-cta',
+	[
+		[
+			'selectors'  => [ '.p-footer-cta__secondary-btn' ],
+			'properties' => [ 'background-color: ' . $secondary_btn_background_color ],
+		],
+	]
 );
 
-Style::register(
+Style::attach(
+	'snow-monkey-footer-cta',
 	[
-		'.p-footer-cta__secondary-btn:hover',
-		'.p-footer-cta__secondary-btn:active',
-		'.p-footer-cta__secondary-btn:focus',
-	],
-	'background-color: ' . Color::darken( $secondary_btn_background_color, 0.05 ),
-	'@media (min-width: 64em)'
+		[
+			'selectors'   => [
+				'.p-footer-cta__secondary-btn:hover',
+				'.p-footer-cta__secondary-btn:active',
+				'.p-footer-cta__secondary-btn:focus',
+			],
+			'properties'  => [ 'background-color: ' . Color::darken( $secondary_btn_background_color, 0.05 ) ],
+			'media_query' => '@media (min-width: 64em)',
+		],
+	]
 );
 
 if ( $secondary_btn_pc_url && $secondary_btn_pc_background_color ) {
-	Style::register(
-		'.p-footer-cta__secondary-btn--pc',
-		'background-color: ' . $secondary_btn_pc_background_color
+	Style::attach(
+		'snow-monkey-footer-cta',
+		[
+			[
+				'selectors'  => [ '.p-footer-cta__secondary-btn--pc' ],
+				'properties' => [ 'background-color: ' . $secondary_btn_pc_background_color ],
+			],
+		]
 	);
 
-	Style::register(
+	Style::attach(
+		'snow-monkey-footer-cta',
 		[
-			'.p-footer-cta__secondary-btn--pc:hover',
-			'.p-footer-cta__secondary-btn--pc:active',
-			'.p-footer-cta__secondary-btn--pc:focus',
-		],
-		'background-color: ' . Color::darken( $secondary_btn_pc_background_color, 0.05 ),
-		'@media (min-width: 64em)'
+			[
+				'selectors'   => [
+					'.p-footer-cta__secondary-btn--pc:hover',
+					'.p-footer-cta__secondary-btn--pc:active',
+					'.p-footer-cta__secondary-btn--pc:focus',
+				],
+				'properties'  => [ 'background-color: ' . Color::darken( $secondary_btn_pc_background_color, 0.05 ) ],
+				'media_query' => '@media (min-width: 64em)',
+			],
+		]
 	);
 }
 
-Style::register(
-	'.p-footer-cta__text',
-	'color: ' . $text_color
+Style::attach(
+	'snow-monkey-footer-cta',
+	[
+		[
+			'selectors'  => [ '.p-footer-cta__text' ],
+			'properties' => [ 'color: ' . $text_color ],
+		],
+	]
 );
 
 if ( $text_pc && $text_pc_color ) {
-	Style::register(
-		'.p-footer-cta__text--pc',
-		'color: ' . $text_pc_color
+	Style::attach(
+		'snow-monkey-footer-cta',
+		[
+			[
+				'selectors'  => [ '.p-footer-cta__text--pc' ],
+				'properties' => [ 'color: ' . $text_pc_color ],
+			],
+		]
 	);
 }
