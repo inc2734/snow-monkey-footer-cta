@@ -17,11 +17,9 @@ $text = get_theme_mod( 'footer-cta-text' );
 
 $primary_btn_label = get_theme_mod( 'footer-cta-primary-btn-label' );
 $primary_btn_url   = get_theme_mod( 'footer-cta-primary-btn-url' );
-$primary_btn_blank = get_theme_mod( 'footer-cta-primary-btn-blank' ) ? 'blank' : 'self';
 
 $secondary_btn_label = get_theme_mod( 'footer-cta-secondary-btn-label' );
 $secondary_btn_url   = get_theme_mod( 'footer-cta-secondary-btn-url' );
-$secondary_btn_blank = get_theme_mod( 'footer-cta-secondary-btn-blank' ) ? 'blank' : 'self';
 
 if ( ! $text && ( ! $primary_btn_label || ! $primary_btn_url ) && ( ! $secondary_btn_label || ! $secondary_btn_url ) ) {
 	return;
