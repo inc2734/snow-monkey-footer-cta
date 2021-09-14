@@ -15,6 +15,10 @@ class Front {
 	 * Constructor.
 	 */
 	public function __construct() {
+		add_action( 'wp_enqueue_scripts', [ $this, '_wp_enqueue_scripts' ] );
+		add_action( 'inc2734_wp_customizer_framework_load_styles', [ $this, '_load_styles' ], 11 );
+
+		add_filter( 'inc2734_wp_view_controller_expand_get_template_part', [ $this, '_expand_get_template_part' ], 11, 2 );
 		add_action(
 			'after_setup_theme',
 			function() {
@@ -27,10 +31,6 @@ class Front {
 				}
 			}
 		);
-
-		add_action( 'wp_enqueue_scripts', [ $this, '_wp_enqueue_scripts' ] );
-		add_action( 'inc2734_wp_customizer_framework_load_styles', [ $this, '_load_styles' ], 11 );
-
 		add_filter( 'snow_monkey_pre_template_part_render_template-parts/nav/footer-sticky', '__return_false', 9 );
 		add_action( 'wp_footer', [ $this, '_display_footer_cta' ] );
 	}
@@ -63,6 +63,24 @@ class Front {
 				'delay' => get_theme_mod( 'footer-cta-delay' ),
 			]
 		);
+	}
+
+	/**
+	 * Expand get_template_part().
+	 *
+	 * @param boolean $expand If true, expand get_template_part().
+	 * @param array   $args   The template part args.
+	 * @return boolean
+	 */
+	public function _expand_get_template_part( $expand, $args ) {
+		if (
+			'template-parts/nav/footer-sticky' === $args['slug']
+			|| 'footer-cta' === $args['slug']
+			|| 0 === strpos( $args['slug'], 'footer-cta/' )
+		) {
+			return true;
+		}
+		return $expand;
 	}
 
 	/**

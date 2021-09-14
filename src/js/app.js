@@ -1,5 +1,3 @@
-'use strict';
-
 import addCustomEvent from '@inc2734/add-custom-event';
 import Cookies from 'js-cookie';
 
