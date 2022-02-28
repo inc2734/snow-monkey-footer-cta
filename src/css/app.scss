@@ -7,9 +7,7 @@ $_half-leading: .4 !default;
 
 .p-footer-cta {
   @include _position(fixed, null, 0, 0, 0, 10);
-  background-color: _lighter($_color-gray); // For IE11
   background-color: _var-lighter-color-gray();
-  color: $_color-text; // For IE11
   color: _var-color-text();
   @include _font-size($_base-font-size-px - 4);
   line-height: 1.5;
@@ -43,7 +41,6 @@ $_half-leading: .4 !default;
     border: none;
     border-radius: 100%;
     background-color: rgba(#000, .8);
-    color: $_color-white; // For IE11
     color: _var-color-white();
     line-height: 1;
     @include _font-size($_base-font-size-px - 2);
@@ -57,7 +54,7 @@ $_half-leading: .4 !default;
       opacity: .4;
     }
 
-    @include _hover(lg) {
+    @include _hover() {
       opacity: 1;
     }
 
