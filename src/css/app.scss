@@ -24,12 +24,6 @@ $_half-leading: .4 !default;
     }
   }
 
-  &[data-clickable="false"] {
-    > .#{$_prefix}c-container {
-      opacity: .2;
-    }
-  }
-
   &__close-btn {
     position: absolute;
     top: $_base-font-size-px * -1.5 / 2;
