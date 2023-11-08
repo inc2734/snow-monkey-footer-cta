@@ -13,8 +13,8 @@ if ( ! is_customize_preview() ) {
 
 Framework::section(
 	'footer-cta-secondary-btn',
-	[
+	array(
 		'title'    => __( 'Secondary button', 'snow-monkey-footer-cta' ),
 		'priority' => 120,
-	]
+	)
 );

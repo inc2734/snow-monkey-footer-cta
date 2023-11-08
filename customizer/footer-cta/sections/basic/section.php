@@ -13,8 +13,8 @@ if ( ! is_customize_preview() ) {
 
 Framework::section(
 	'footer-cta-basic',
-	[
+	array(
 		'title'    => __( 'Basic settings', 'snow-monkey-footer-cta' ),
 		'priority' => 100,
-	]
+	)
 );

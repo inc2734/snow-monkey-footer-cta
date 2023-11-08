@@ -13,9 +13,9 @@ if ( ! is_customize_preview() ) {
 
 Framework::section(
 	'footer-cta-primary-btn-pc',
-	[
+	array(
 		'title'       => __( 'Primary button (Tablet & PC)', 'snow-monkey-footer-cta' ),
 		'description' => __( 'If set, use this button on PCs and tablets. This button is not used if either the label or the URL has not been entered.', 'snow-monkey-footer-cta' ),
 		'priority'    => 111,
-	]
+	)
 );

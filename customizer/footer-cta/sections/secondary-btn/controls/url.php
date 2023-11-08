@@ -10,11 +10,11 @@ use Inc2734\WP_Customizer_Framework\Framework;
 Framework::control(
 	'text',
 	'footer-cta-secondary-btn-url',
-	[
+	array(
 		'label'    => __( 'URL', 'snow-monkey-footer-cta' ),
 		'default'  => '',
 		'priority' => 120,
-	]
+	)
 );
 
 if ( ! is_customize_preview() ) {

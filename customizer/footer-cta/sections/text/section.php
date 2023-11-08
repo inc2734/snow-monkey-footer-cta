@@ -13,8 +13,8 @@ if ( ! is_customize_preview() ) {
 
 Framework::section(
 	'footer-cta-text',
-	[
+	array(
 		'title'    => __( 'Text', 'snow-monkey-footer-cta' ),
 		'priority' => 130,
-	]
+	)
 );

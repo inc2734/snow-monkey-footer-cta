@@ -10,11 +10,11 @@ use Inc2734\WP_Customizer_Framework\Framework;
 Framework::control(
 	'checkbox',
 	'footer-cta-primary-btn-blank',
-	[
+	array(
 		'label'    => __( 'Open new tab', 'snow-monkey-footer-cta' ),
 		'default'  => false,
 		'priority' => 130,
-	]
+	)
 );
 
 if ( ! is_customize_preview() ) {

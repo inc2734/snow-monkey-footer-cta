@@ -17,21 +17,21 @@ if ( ! $label || ! $url ) {
 	return;
 }
 
-$classes = [
+$classes = array(
 	'c-btn',
 	'c-btn--full',
 	'p-footer-cta__secondary-btn',
-];
+);
 if ( $label_pc && $url_pc ) {
 	$classes[] = 'u-invisible-md-up';
 }
 
-$attributes = [];
+$attributes = array();
 if ( $blank ) {
-	$attributes = [
+	$attributes = array(
 		'target' => '_blank',
 		'rel'    => 'noopener',
-	];
+	);
 }
 ?>
 
@@ -50,20 +50,20 @@ if ( ! $label_pc || ! $url_pc ) {
 	return;
 }
 
-$classes = [
+$classes = array(
 	'c-btn',
 	'c-btn--full',
 	'p-footer-cta__secondary-btn',
 	'p-footer-cta__secondary-btn--pc',
 	'u-invisible-sm',
-];
+);
 
-$attributes = [];
+$attributes = array();
 if ( $blank_pc ) {
-	$attributes = [
+	$attributes = array(
 		'target' => '_blank',
 		'rel'    => 'noopener',
-	];
+	);
 }
 ?>
 

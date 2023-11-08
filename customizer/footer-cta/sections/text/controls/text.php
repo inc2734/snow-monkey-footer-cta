@@ -10,11 +10,11 @@ use Inc2734\WP_Customizer_Framework\Framework;
 Framework::control(
 	'text',
 	'footer-cta-text',
-	[
+	array(
 		'label'    => __( 'Text', 'snow-monkey-footer-cta' ),
 		'default'  => '',
 		'priority' => 100,
-	]
+	)
 );
 
 if ( ! is_customize_preview() ) {

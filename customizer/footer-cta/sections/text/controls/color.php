@@ -10,11 +10,11 @@ use Inc2734\WP_Customizer_Framework\Framework;
 Framework::control(
 	'color',
 	'footer-cta-text-color',
-	[
+	array(
 		'label'    => __( 'Text color', 'snow-monkey-footer-cta' ),
 		'default'  => '#333',
 		'priority' => 110,
-	]
+	)
 );
 
 if ( ! is_customize_preview() ) {

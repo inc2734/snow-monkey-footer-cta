@@ -10,14 +10,14 @@ use Inc2734\WP_Customizer_Framework\Framework;
 Framework::control(
 	'text',
 	'footer-cta-primary-btn-pc-url',
-	[
+	array(
 		'label'           => __( 'URL', 'snow-monkey-footer-cta' ),
 		'default'         => '',
 		'priority'        => 120,
 		'active_callback' => function() {
 			return get_theme_mod( 'footer-cta-primary-btn-url' );
 		},
-	]
+	)
 );
 
 if ( ! is_customize_preview() ) {

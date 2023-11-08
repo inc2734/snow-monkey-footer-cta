@@ -10,11 +10,11 @@ use Inc2734\WP_Customizer_Framework\Framework;
 Framework::control(
 	'number',
 	'footer-cta-delay',
-	[
+	array(
 		'label'    => __( 'Scroll amount(px) to display', 'snow-monkey-footer-cta' ),
 		'default'  => 0,
 		'priority' => 120,
-	]
+	)
 );
 
 if ( ! is_customize_preview() ) {

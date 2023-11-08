@@ -10,14 +10,14 @@ use Inc2734\WP_Customizer_Framework\Framework;
 Framework::control(
 	'color',
 	'footer-cta-text-pc-color',
-	[
+	array(
 		'label'           => __( 'Text color', 'snow-monkey-footer-cta' ),
 		'default'         => false,
 		'priority'        => 110,
 		'active_callback' => function() {
 			return get_theme_mod( 'footer-cta-text-pc' );
 		},
-	]
+	)
 );
 
 if ( ! is_customize_preview() ) {

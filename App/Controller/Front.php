@@ -15,10 +15,10 @@ class Front {
 	 * Constructor.
 	 */
 	public function __construct() {
-		add_action( 'wp_enqueue_scripts', [ $this, '_wp_enqueue_scripts' ] );
-		add_action( 'inc2734_wp_customizer_framework_load_styles', [ $this, '_load_styles' ], 11 );
+		add_action( 'wp_enqueue_scripts', array( $this, '_wp_enqueue_scripts' ) );
+		add_action( 'inc2734_wp_customizer_framework_load_styles', array( $this, '_load_styles' ), 11 );
 
-		add_filter( 'inc2734_wp_view_controller_expand_get_template_part', [ $this, '_expand_get_template_part' ], 11, 2 );
+		add_filter( 'inc2734_wp_view_controller_expand_get_template_part', array( $this, '_expand_get_template_part' ), 11, 2 );
 		add_action(
 			'after_setup_theme',
 			function() {
@@ -26,13 +26,13 @@ class Front {
 					$slug = rtrim( str_replace( SNOW_MONKEY_FOOTER_CTA_PATH . '/templates/', '', $file ), '.php' );
 					add_filter(
 						'snow_monkey_template_part_root_hierarchy_' . $slug,
-						[ $this, '_template_part_root_hierarchy' ]
+						array( $this, '_template_part_root_hierarchy' )
 					);
 				}
 			}
 		);
 		add_filter( 'snow_monkey_pre_template_part_render_template-parts/nav/footer-sticky', '__return_false', 9 );
-		add_action( 'wp_footer', [ $this, '_display_footer_cta' ] );
+		add_action( 'wp_footer', array( $this, '_display_footer_cta' ) );
 	}
 
 	/**
@@ -43,15 +43,15 @@ class Front {
 	public function _wp_enqueue_scripts() {
 		wp_enqueue_style(
 			'snow-monkey-footer-cta',
-			SNOW_MONKEY_FOOTER_CTA_URL . '/dist/css/app.min.css',
-			[ Helper::get_main_style_handle() ],
-			filemtime( SNOW_MONKEY_FOOTER_CTA_PATH . '/dist/css/app.min.css' )
+			SNOW_MONKEY_FOOTER_CTA_URL . '/dist/css/app.css',
+			array( Helper::get_main_style_handle() ),
+			filemtime( SNOW_MONKEY_FOOTER_CTA_PATH . '/dist/css/app.css' )
 		);
 
 		wp_enqueue_script(
 			'snow-monkey-footer-cta',
 			SNOW_MONKEY_FOOTER_CTA_URL . '/dist/js/app.js',
-			[ Helper::get_main_script_handle() . '-footer-sticky-nav' ],
+			array( Helper::get_main_script_handle() . '-footer-sticky-nav' ),
 			filemtime( SNOW_MONKEY_FOOTER_CTA_PATH . '/dist/js/app.js' ),
 			true
 		);
@@ -59,9 +59,9 @@ class Front {
 		wp_localize_script(
 			'snow-monkey-footer-cta',
 			'snow_monkey_footer_cta',
-			[
+			array(
 				'delay' => get_theme_mod( 'footer-cta-delay' ),
-			]
+			)
 		);
 	}
 

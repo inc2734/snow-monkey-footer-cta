@@ -12,9 +12,9 @@ if ( ! $text ) {
 	return;
 }
 
-$classes = [
+$classes = array(
 	'p-footer-cta__text',
-];
+);
 if ( $text_pc ) {
 	$classes[] = 'u-invisible-md-up';
 }
@@ -29,11 +29,11 @@ if ( ! $text_pc ) {
 	return;
 }
 
-$classes = [
+$classes = array(
 	'p-footer-cta__text',
 	'p-footer-cta__text--pc',
 	'u-invisible-sm',
-];
+);
 ?>
 
 <div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">

@@ -13,8 +13,8 @@ if ( ! is_customize_preview() ) {
 
 Framework::panel(
 	'footer-cta',
-	[
+	array(
 		'title'    => __( 'Footer CTA', 'snow-monkey-footer-cta' ),
 		'priority' => 2000,
-	]
+	)
 );

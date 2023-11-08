@@ -10,11 +10,11 @@ use Inc2734\WP_Customizer_Framework\Framework;
 Framework::control(
 	'color',
 	'footer-cta-primary-btn-background-color',
-	[
+	array(
 		'label'    => __( 'Background color', 'snow-monkey-footer-cta' ),
 		'default'  => '#fab82b',
 		'priority' => 100,
-	]
+	)
 );
 
 if ( ! is_customize_preview() ) {

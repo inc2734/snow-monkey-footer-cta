@@ -3,10 +3,10 @@
  * Plugin name: Snow Monkey Footer CTA
  * Description: Display CTA to the site footer. When this plug-in is activated, the sticky footer navigation is not displayed.
  * Version: 2.1.3
- * Tested up to: 5.9
- * Requires at least: 5.8
- * Requires PHP: 5.6
- * Requires Snow Monkey: 15.0.0
+ * Tested up to: 6.4
+ * Requires at least: 6.1
+ * Requires PHP: 7.4
+ * Requires Snow Monkey: 19.0.0
  * Author: inc2734
  * Author URI: https://2inc.org
  * License: GPL2 or later
@@ -33,7 +33,7 @@ class Bootstrap {
 	 * Constructor.
 	 */
 	public function __construct() {
-		add_action( 'plugins_loaded', [ $this, '_plugins_loaded' ] );
+		add_action( 'plugins_loaded', array( $this, '_plugins_loaded' ) );
 	}
 
 	/**
@@ -42,7 +42,7 @@ class Bootstrap {
 	public function _plugins_loaded() {
 		load_plugin_textdomain( 'snow-monkey-footer-cta', false, basename( __DIR__ ) . '/languages' );
 
-		add_action( 'init', [ $this, '_activate_autoupdate' ] );
+		add_action( 'init', array( $this, '_activate_autoupdate' ) );
 
 		$theme = wp_get_theme( get_template() );
 		if ( 'snow-monkey' !== $theme->template && 'snow-monkey/resources' !== $theme->template ) {
@@ -63,9 +63,9 @@ class Bootstrap {
 
 		$data = get_file_data(
 			__FILE__,
-			[
+			array(
 				'RequiresSnowMonkey' => 'Requires Snow Monkey',
-			]
+			)
 		);
 
 		if (
@@ -112,9 +112,9 @@ class Bootstrap {
 			plugin_basename( __FILE__ ),
 			'inc2734',
 			'snow-monkey-footer-cta',
-			[
+			array(
 				'homepage' => 'https://snow-monkey.2inc.org',
-			]
+			)
 		);
 	}
 }
