@@ -13,9 +13,9 @@ const onDOMContentLoaded = () => {
 
   const throttle = (callback, delay) => {
     let time = Date.now();
-    return () => {
+    return (...args) => {
       if ((time + delay - Date.now()) < 0) {
-        callback.apply(this, arguments);
+        callback.apply(this, args);
         time = Date.now();
       }
     };

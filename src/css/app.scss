@@ -1,81 +1,83 @@
-@charset 'utf-8';
-
-$_base-font-size-px: 16px !default;
-$_half-leading: .4 !default;
-
 @import '../../node_modules/sass-basis/src/css/basis-core';
 
 .p-footer-cta {
-  @include _position(fixed, null, 0, 0, 0, 10);
-  background-color: _var-lighter-color-gray();
-  color: _var-color-text();
-  @include _font-size($_base-font-size-px - 4);
-  line-height: 1.5;
-  padding-bottom: constant(safe-area-inset-bottom);
-  padding-bottom: env(safe-area-inset-bottom);
-  @include _transition(opacity);
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	background-color: var(--_lighter-color-gray);
+	color: var(--_color-text);
+	@include _set-font-size-level(-2);
+	line-height: 1.5;
+	padding-bottom: env(safe-area-inset-bottom);
+	@include _transition(opacity);
 
-  &[aria-hidden="true"] {
-    visibility: hidden;
-    opacity: 0;
+	&[aria-hidden="true"] {
+		visibility: hidden;
+		opacity: 0;
 
-    * {
-      visibility: hidden !important;
-    }
-  }
+		* {
+			visibility: hidden !important;
+		}
+	}
 
-  &__close-btn {
-    position: absolute;
-    top: $_base-font-size-px * -1.5 / 2;
-    left: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border: none;
-    border-radius: 100%;
-    background-color: rgba(#000, .8);
-    color: _var-color-white();
-    line-height: 1;
-    @include _font-size($_base-font-size-px - 2);
-    @include _square($_base-font-size-px * 1.5);
-    padding: 0;
-    opacity: 1;
-    @include _transition(opacity);
+	&__close-btn {
+		position: absolute;
+		top: calc(1.5rem * -1 / 2);
+		left: 2px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		border: none;
+		border-radius: 100%;
+		background-color: rgba(#000, .8);
+		color: var(--wp--preset--color--white);
+		line-height: 1;
+		@include _set-font-size-level(-1);
+		height: 1.5rem;
+		width: 1.5rem;
+		padding: 0;
+		opacity: 1;
+		@include _transition(opacity);
 
-    @include _media-min(lg) {
-      left: _space(.25);
-      opacity: .4;
-    }
+		@include _media-min(lg) {
+			left: var(--_s-2);
+			opacity: .4;
+		}
 
-    @include _hover() {
-      opacity: 1;
-    }
+		@include _hover() {
+			opacity: 1;
+		}
 
-    &::before {
-      @include _position(absolute, 50%, null, null, 50%);
-      @include _square(44px);
-      content: '';
-      display: block;
-      transform: translate(-50%, -50%);
-    }
-  }
+		&::before {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			height: 44px;
+			width: 44px;
+			content: '';
+			display: block;
+			transform: translate(-50%, -50%);
+		}
+	}
 
-  > .#{$_prefix}c-container {
-    @include _padding-top(.25);
-    @include _padding-bottom(.25);
-  }
+	> .#{ $_prefix }c-container {
+		padding-top: var(--_padding-2);
+		padding-bottom: var(--_padding-2);
+	}
 
-  .#{$_prefix}c-row + .#{$_prefix}c-row {
-    @include _padding-top(.25);
-  }
+	.#{ $_prefix }c-row + .#{ $_prefix }c-row {
+		padding-top: var(--_padding-2);
+	}
 
-  .#{$_prefix}c-btn {
-    @include _font-size($_base-font-size-px - 2);
-    @include _padding(.5);
+	.#{ $_prefix }c-btn {
+		@include _set-font-size-level(-1);
+		padding: var(--_padding-1);
 
-    @include _media-min(md) {
-      @include _padding(.5, 1);
-    }
-  }
+		@include _media-min(md) {
+			padding: var(--_padding-1) var(--_padding1);
+		}
+	}
 }
