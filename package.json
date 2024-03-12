@@ -59,6 +59,8 @@
 		"build": "npm-run-all -p css js",
 		"zip:pack": "rsync -a --exclude='/vendor' --exclude='/node_modules' --exclude='.*' --exclude='*.config.js' --exclude='*.xml.dist' --exclude='*.ruleset.xml' --exclude='/tests' --exclude='package*.json' . snow-monkey-footer-cta && wp-env start && npm run composer install -- --no-dev -d snow-monkey-footer-cta",
 		"zip:archive": "zip -9 -qmr snow-monkey-footer-cta.zip snow-monkey-footer-cta",
-		"zip": "npm run clean:zip && npm run zip:pack && npm run zip:archive"
+		"zip": "npm run clean:zip && npm run zip:pack && npm run zip:archive",
+		"make-pot": "npm run wp i18n -- make-pot . ./languages/snow-monkey-footer-cta.pot --exclude=src",
+		"make-php": "npm run cli php -- wp-content/plugins/snow-monkey-footer-cta/bin/l10n.php"
 	}
 }

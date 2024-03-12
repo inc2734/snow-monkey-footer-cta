@@ -1,53 +1,38 @@
+# Copyright (C) 2024 inc2734
+# This file is distributed under the GPL2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Snow Monkey Footer CTA\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/snow-monkey-"
-"footer-cta\n"
-"POT-Creation-Date: 2024-03-12T12:48:45+00:00\n"
-"PO-Revision-Date: 2024-03-12 21:51+0900\n"
-"Last-Translator: inc2734 <inc@2inc.org>\n"
-"Language-Team: inc2734 <inc@2inc.org>\n"
-"Language: ja\n"
+"Project-Id-Version: Snow Monkey Footer CTA 2.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/snow-monkey-footer-cta\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4.2\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: snow-monkey-footer-cta.php\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.js\n"
-"X-Poedit-SearchPathExcluded-1: .themes\n"
-"X-Poedit-SearchPathExcluded-2: vendor\n"
+"POT-Creation-Date: 2024-03-12T12:48:45+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.9.0\n"
+"X-Domain: snow-monkey-footer-cta\n"
 
 #. Plugin Name of the plugin
 msgid "Snow Monkey Footer CTA"
-msgstr "Snow Monkey Footer CTA"
+msgstr ""
 
 #. Description of the plugin
-msgid ""
-"Display CTA to the site footer. When this plug-in is activated, the sticky "
-"footer navigation is not displayed."
+msgid "Display CTA to the site footer. When this plug-in is activated, the sticky footer navigation is not displayed."
 msgstr ""
-"フッターに CTA を表示します。このプラグインを有効化したとき、固定フッターナ"
-"ビゲーションは表示されません。"
 
 #. Author of the plugin
 msgid "inc2734"
-msgstr "inc2734"
+msgstr ""
 
 #. Author URI of the plugin
 msgid "https://2inc.org"
-msgstr "https://2inc.org"
+msgstr ""
 
 #: customizer/footer-cta/panel.php:17
 msgid "Footer CTA"
-msgstr "フッター CTA"
+msgstr ""
 
 #: customizer/footer-cta/sections/basic/controls/color.php:14
 #: customizer/footer-cta/sections/primary-btn-pc/controls/background-color.php:14
@@ -55,108 +40,97 @@ msgstr "フッター CTA"
 #: customizer/footer-cta/sections/secondary-btn-pc/controls/background-color.php:14
 #: customizer/footer-cta/sections/secondary-btn/controls/background-color.php:14
 msgid "Background color"
-msgstr "背景色"
+msgstr ""
 
 #: customizer/footer-cta/sections/basic/controls/delay.php:14
 msgid "Scroll amount(px) to display"
-msgstr "表示するまでのスクロール量（px）"
+msgstr ""
 
 #: customizer/footer-cta/sections/basic/controls/opacity.php:14
 msgid "Opacity (%)"
-msgstr "透明度（%）"
+msgstr ""
 
 #: customizer/footer-cta/sections/basic/section.php:17
 msgid "Basic settings"
-msgstr "基本設定"
+msgstr ""
 
 #: customizer/footer-cta/sections/primary-btn-pc/controls/label.php:14
 #: customizer/footer-cta/sections/primary-btn/controls/label.php:14
 #: customizer/footer-cta/sections/secondary-btn-pc/controls/label.php:14
 #: customizer/footer-cta/sections/secondary-btn/controls/label.php:14
 msgid "Label"
-msgstr "ラベル"
+msgstr ""
 
 #: customizer/footer-cta/sections/primary-btn-pc/controls/label.php:15
 #: customizer/footer-cta/sections/primary-btn/controls/label.php:15
 #: customizer/footer-cta/sections/secondary-btn-pc/controls/label.php:15
 #: customizer/footer-cta/sections/secondary-btn/controls/label.php:15
 msgid "Button"
-msgstr "ボタン"
+msgstr ""
 
 #: customizer/footer-cta/sections/primary-btn-pc/controls/target.php:14
 #: customizer/footer-cta/sections/primary-btn/controls/target.php:14
 #: customizer/footer-cta/sections/secondary-btn-pc/controls/target.php:14
 #: customizer/footer-cta/sections/secondary-btn/controls/target.php:14
 msgid "Open new tab"
-msgstr "新しいタブで開く"
+msgstr ""
 
 #: customizer/footer-cta/sections/primary-btn-pc/controls/url.php:14
 #: customizer/footer-cta/sections/primary-btn/controls/url.php:14
 #: customizer/footer-cta/sections/secondary-btn-pc/controls/url.php:14
 #: customizer/footer-cta/sections/secondary-btn/controls/url.php:14
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 #: customizer/footer-cta/sections/primary-btn-pc/section.php:17
 msgid "Primary button (Tablet & PC)"
-msgstr "プライマリーボタン（タブレット＆PC）"
+msgstr ""
 
 #: customizer/footer-cta/sections/primary-btn-pc/section.php:18
 #: customizer/footer-cta/sections/secondary-btn-pc/section.php:18
-msgid ""
-"If set, use this button on PCs and tablets. This button is not used if "
-"either the label or the URL has not been entered."
+msgid "If set, use this button on PCs and tablets. This button is not used if either the label or the URL has not been entered."
 msgstr ""
-"設定されている場合、PCとタブレットではこのボタンを使用します。ラベルとURLの"
-"いずれかが未入力の場合、このボタンは使用されません。"
 
 #: customizer/footer-cta/sections/primary-btn/section.php:17
 msgid "Primary button"
-msgstr "プライマリーボタン"
+msgstr ""
 
 #: customizer/footer-cta/sections/secondary-btn-pc/section.php:17
 msgid "Secondary button (Tablet & PC)"
-msgstr "セカンダリーボタン（タブレット＆PC）"
+msgstr ""
 
 #: customizer/footer-cta/sections/secondary-btn/section.php:17
 msgid "Secondary button"
-msgstr "セカンダリーボタン"
+msgstr ""
 
 #: customizer/footer-cta/sections/text-pc/controls/color.php:14
 #: customizer/footer-cta/sections/text/controls/color.php:14
 msgid "Text color"
-msgstr "文字色"
+msgstr ""
 
 #: customizer/footer-cta/sections/text-pc/controls/text.php:14
 #: customizer/footer-cta/sections/text/controls/text.php:14
 #: customizer/footer-cta/sections/text/section.php:17
 msgid "Text"
-msgstr "テキスト"
+msgstr ""
 
 #: customizer/footer-cta/sections/text-pc/section.php:17
 msgid "Text (Tablet & PC)"
-msgstr "テキスト（タブレット＆PC）"
+msgstr ""
 
 #: customizer/footer-cta/sections/text-pc/section.php:18
-msgid ""
-"If set, use this text on PCs and tablets. This is not used if either the "
-"text has not been entered."
+msgid "If set, use this text on PCs and tablets. This is not used if either the text has not been entered."
 msgstr ""
-"設定されている場合、PCとタブレットではこのテキストを使用します。テキストが"
-"未入力の場合は使用されません。"
 
 #: snow-monkey-footer-cta.php:55
 msgid "[Snow Monkey Footer CTA] Needs the Snow Monkey."
-msgstr "[Snow Monkey Footer CTA] Snow Monkeyが必要です。"
+msgstr ""
 
 #. translators: %1$s: version
 #: snow-monkey-footer-cta.php:85
 msgid "[Snow Monkey Footer CTA] Needs the Snow Monkey %1$s or more."
-msgstr "[Snow Monkey Footer CTA] Snow Monkey %1$s 以上が必要です。"
+msgstr ""
 
 #: templates/footer-cta.php:31
 msgid "Close"
-msgstr "閉じる"
-
-#~ msgid "Background"
-#~ msgstr "背景"
+msgstr ""
