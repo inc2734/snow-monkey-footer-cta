@@ -14,8 +14,9 @@ Framework::control(
 		'label'           => __( 'URL', 'snow-monkey-footer-cta' ),
 		'default'         => '',
 		'priority'        => 120,
-		'active_callback' => function() {
-			return get_theme_mod( 'footer-cta-secondary-btn-url' );
+		'active_callback' => function () {
+			return (bool) get_theme_mod( 'footer-cta-secondary-btn-url' )
+					&& (bool) get_theme_mod( 'footer-cta-secondary-btn-label' );
 		},
 	)
 );

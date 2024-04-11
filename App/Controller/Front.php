@@ -21,7 +21,7 @@ class Front {
 		add_filter( 'inc2734_wp_view_controller_expand_get_template_part', array( $this, '_expand_get_template_part' ), 11, 2 );
 		add_action(
 			'after_setup_theme',
-			function() {
+			function () {
 				foreach ( Helper::glob_recursive( SNOW_MONKEY_FOOTER_CTA_PATH . '/templates' ) as $file ) {
 					$slug = rtrim( str_replace( SNOW_MONKEY_FOOTER_CTA_PATH . '/templates/', '', $file ), '.php' );
 					add_filter(

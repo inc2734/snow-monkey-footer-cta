@@ -11,3 +11,4 @@ snow-monkey-footer-cta.zip
 .wp-env.override.json
 /.export/*
 .phpunit.result.cache
+error_log

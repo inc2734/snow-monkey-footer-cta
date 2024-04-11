@@ -48,7 +48,7 @@ class Bootstrap {
 		if ( 'snow-monkey' !== $theme->template && 'snow-monkey/resources' !== $theme->template ) {
 			add_action(
 				'admin_notices',
-				function() {
+				function () {
 					?>
 					<div class="notice notice-warning is-dismissible">
 						<p>
@@ -74,14 +74,14 @@ class Bootstrap {
 		) {
 			add_action(
 				'admin_notices',
-				function() use ( $data ) {
+				function () use ( $data ) {
 					?>
 					<div class="notice notice-warning is-dismissible">
 						<p>
 							<?php
 							echo esc_html(
 								sprintf(
-									// translators: %1$s: version
+									// translators: %1$s: version.
 									__(
 										'[Snow Monkey Footer CTA] Needs the Snow Monkey %1$s or more.',
 										'snow-monkey-footer-cta'
@@ -119,5 +119,5 @@ class Bootstrap {
 	}
 }
 
-require_once( SNOW_MONKEY_FOOTER_CTA_PATH . '/vendor/autoload.php' );
+require_once SNOW_MONKEY_FOOTER_CTA_PATH . '/vendor/autoload.php';
 new Bootstrap();

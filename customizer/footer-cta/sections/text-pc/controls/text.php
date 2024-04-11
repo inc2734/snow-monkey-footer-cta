@@ -14,8 +14,8 @@ Framework::control(
 		'label'           => __( 'Text', 'snow-monkey-footer-cta' ),
 		'default'         => '',
 		'priority'        => 100,
-		'active_callback' => function() {
-			return get_theme_mod( 'footer-cta-text' );
+		'active_callback' => function () {
+			return (bool) get_theme_mod( 'footer-cta-text' );
 		},
 	)
 );

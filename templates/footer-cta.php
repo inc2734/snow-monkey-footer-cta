@@ -7,7 +7,8 @@
 
 use Framework\Helper;
 
-$is_hidden            = isset( $_COOKIE['snow-monkey-footer-cta-hidden'] ) ? $_COOKIE['snow-monkey-footer-cta-hidden'] : null;
+
+$is_hidden            = filter_input( INPUT_COOKIE, 'snow-monkey-footer-cta-hidden' );
 $is_customize_preview = is_customize_preview();
 if ( $is_hidden && ! $is_customize_preview ) {
 	return;
@@ -34,8 +35,8 @@ if ( ! $text && ( ! $primary_btn_label || ! $primary_btn_url ) && ( ! $secondary
 	<div class="c-container">
 		<div class="c-row c-row--margin-s c-row--md-margin c-row--middle">
 			<?php if ( ! $text ) : ?>
-				<?php if ( $primary_btn_label && $primary_btn_url ) : // has primary btn ?>
-					<?php if ( $secondary_btn_label && $secondary_btn_url ) : // has primary btn, and secondary btn ?>
+				<?php if ( $primary_btn_label && $primary_btn_url ) : // has primary btn. ?>
+					<?php if ( $secondary_btn_label && $secondary_btn_url ) : // has primary btn, and secondary btn. ?>
 
 						<div class="c-row__col c-row__col--1-2">
 							<?php Helper::get_template_part( 'footer-cta/primary-btn' ); ?>
@@ -44,7 +45,7 @@ if ( ! $text && ( ! $primary_btn_label || ! $primary_btn_url ) && ( ! $secondary
 							<?php Helper::get_template_part( 'footer-cta/secondary-btn' ); ?>
 						</div>
 
-					<?php else : // has primary btn ?>
+					<?php else : // has primary btn. ?>
 
 						<div class="c-row__col c-row__col--1-1">
 							<?php Helper::get_template_part( 'footer-cta/primary-btn' ); ?>
@@ -52,7 +53,7 @@ if ( ! $text && ( ! $primary_btn_label || ! $primary_btn_url ) && ( ! $secondary
 
 					<?php endif; ?>
 
-				<?php elseif ( $secondary_btn_label && $secondary_btn_url ) : // has secondary btn ?>
+				<?php elseif ( $secondary_btn_label && $secondary_btn_url ) : // has secondary btn. ?>
 
 					<div class="c-row__col c-row__col--1-1">
 						<?php Helper::get_template_part( 'footer-cta/primary-btn' ); ?>
@@ -60,9 +61,9 @@ if ( ! $text && ( ! $primary_btn_label || ! $primary_btn_url ) && ( ! $secondary
 
 				<?php endif; ?>
 
-			<?php else : // has text ?>
-				<?php if ( $primary_btn_label && $primary_btn_url ) : // has text and primary btn ?>
-					<?php if ( $secondary_btn_label && $secondary_btn_url ) : // has text, primary btn and secondary btn ?>
+			<?php else : // has text. ?>
+				<?php if ( $primary_btn_label && $primary_btn_url ) : // has text and primary btn. ?>
+					<?php if ( $secondary_btn_label && $secondary_btn_url ) : // has text, primary btn and secondary btn. ?>
 
 							<div class="c-row__col c-row__col--1-1">
 								<?php Helper::get_template_part( 'footer-cta/text' ); ?>
@@ -76,7 +77,7 @@ if ( ! $text && ( ! $primary_btn_label || ! $primary_btn_url ) && ( ! $secondary
 								<?php Helper::get_template_part( 'footer-cta/secondary-btn' ); ?>
 							</div>
 
-					<?php else : // has text and primary btn ?>
+					<?php else : // has text and primary btn. ?>
 
 						<div class="c-row__col c-row__col--1-2">
 							<?php Helper::get_template_part( 'footer-cta/text' ); ?>
@@ -86,7 +87,7 @@ if ( ! $text && ( ! $primary_btn_label || ! $primary_btn_url ) && ( ! $secondary
 						</div>
 
 					<?php endif; ?>
-				<?php elseif ( $secondary_btn_label && $secondary_btn_url ) : // has text and secondary btn ?>
+				<?php elseif ( $secondary_btn_label && $secondary_btn_url ) : // has text and secondary btn. ?>
 
 					<div class="c-row__col c-row__col--1-2">
 						<?php Helper::get_template_part( 'footer-cta/text' ); ?>
@@ -95,7 +96,7 @@ if ( ! $text && ( ! $primary_btn_label || ! $primary_btn_url ) && ( ! $secondary
 						<?php Helper::get_template_part( 'footer-cta/secondary-btn' ); ?>
 					</div>
 
-				<?php else : // has text ?>
+				<?php else : // has text. ?>
 
 					<div class="c-row__col c-row__col--1-2">
 						<?php Helper::get_template_part( 'footer-cta/text' ); ?>
