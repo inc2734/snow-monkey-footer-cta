@@ -1,4 +1,4 @@
-@import '../../node_modules/sass-basis/src/css/basis-core';
+@use '../../node_modules/sass-basis/src/css/core';
 
 .p-footer-cta {
 	position: fixed;
@@ -8,10 +8,10 @@
 	z-index: 10;
 	background-color: var(--_lighter-color-gray);
 	color: var(--_color-text);
-	@include _set-font-size-level(-2);
+	@include core.set-font-size-level(-2);
 	line-height: 1.5;
 	padding-bottom: env(safe-area-inset-bottom);
-	@include _transition(opacity);
+	@include core.transition(opacity);
 
 	&[aria-hidden="true"] {
 		visibility: hidden;
@@ -35,19 +35,19 @@
 		background-color: rgba(#000, .8);
 		color: var(--wp--preset--color--white);
 		line-height: 1;
-		@include _set-font-size-level(-1);
+		@include core.set-font-size-level(-1);
 		height: 1.5rem;
 		width: 1.5rem;
 		padding: 0;
 		opacity: 1;
-		@include _transition(opacity);
+		@include core.transition(opacity);
 
-		@include _media-min(lg) {
+		@include core.media-min(lg) {
 			left: var(--_s-2);
 			opacity: .4;
 		}
 
-		@include _hover() {
+		@include core.hover() {
 			opacity: 1;
 		}
 
@@ -63,20 +63,20 @@
 		}
 	}
 
-	> .#{ $_prefix }c-container {
+	> .c-container {
 		padding-top: var(--_padding-2);
 		padding-bottom: var(--_padding-2);
 	}
 
-	.#{ $_prefix }c-row + .#{ $_prefix }c-row {
+	.c-row + .c-row {
 		padding-top: var(--_padding-2);
 	}
 
-	.#{ $_prefix }c-btn {
-		@include _set-font-size-level(-1);
+	.c-btn {
+		@include core.set-font-size-level(-1);
 		padding: var(--_padding-1);
 
-		@include _media-min(md) {
+		@include core.media-min(md) {
 			padding: var(--_padding-1) var(--_padding1);
 		}
 	}
