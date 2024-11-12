@@ -40,8 +40,7 @@ class Bootstrap {
 	 * Plugins loaded.
 	 */
 	public function _plugins_loaded() {
-		load_plugin_textdomain( 'snow-monkey-footer-cta', false, basename( __DIR__ ) . '/languages' );
-
+		add_action( 'init', array( $this, '_load_textdomain' ) );
 		add_action( 'init', array( $this, '_activate_autoupdate' ) );
 
 		$theme = wp_get_theme( get_template() );
@@ -100,6 +99,13 @@ class Bootstrap {
 
 		new Controller\Front();
 		new Controller\Customizer();
+	}
+
+	/**
+	 * Load textdomain.
+	 */
+	public function _load_textdomain() {
+		load_plugin_textdomain( 'snow-monkey-footer-cta', false, basename( __DIR__ ) . '/languages' );
 	}
 
 	/**
