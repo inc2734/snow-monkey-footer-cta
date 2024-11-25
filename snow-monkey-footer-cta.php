@@ -20,7 +20,6 @@
 
 namespace Snow_Monkey\Plugin\FooterCTA;
 
-use Inc2734\WP_GitHub_Plugin_Updater\Bootstrap as Updater;
 use Snow_Monkey\Plugin\FooterCTA\App\Controller;
 use Framework\Helper;
 
@@ -41,7 +40,8 @@ class Bootstrap {
 	 */
 	public function _plugins_loaded() {
 		add_action( 'init', array( $this, '_load_textdomain' ) );
-		add_action( 'init', array( $this, '_activate_autoupdate' ) );
+
+		new App\Updater();
 
 		$theme = wp_get_theme( get_template() );
 		if ( 'snow-monkey' !== $theme->template && 'snow-monkey/resources' !== $theme->template ) {
@@ -106,22 +106,6 @@ class Bootstrap {
 	 */
 	public function _load_textdomain() {
 		load_plugin_textdomain( 'snow-monkey-footer-cta', false, basename( __DIR__ ) . '/languages' );
-	}
-
-	/**
-	 * Activate auto update using GitHub
-	 *
-	 * @return void
-	 */
-	public function _activate_autoupdate() {
-		new Updater(
-			plugin_basename( __FILE__ ),
-			'inc2734',
-			'snow-monkey-footer-cta',
-			array(
-				'homepage' => 'https://snow-monkey.2inc.org',
-			)
-		);
 	}
 }
 
