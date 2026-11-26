@@ -55,6 +55,24 @@ class Footer_CTA_Test extends WP_UnitTestCase {
 		$this->assertStringContainsString( 'href="https://example.org/secondary"', $this->render_template( 'footer-cta/secondary-btn' ) );
 	}
 
+	public function test_secondary_button_renders_on_its_own() {
+		set_theme_mod( 'footer-cta-secondary-btn-label', 'Secondary CTA' );
+		set_theme_mod( 'footer-cta-secondary-btn-url', 'https://example.org/secondary' );
+		set_theme_mod( 'footer-cta-secondary-btn-pc-label', 'Desktop secondary CTA' );
+		set_theme_mod( 'footer-cta-secondary-btn-pc-url', 'https://example.org/desktop-secondary' );
+
+		remove_filter( 'snow_monkey_pre_template_part_render', '__return_false' );
+		try {
+			$html = $this->render_template( 'footer-cta' );
+		} finally {
+			add_filter( 'snow_monkey_pre_template_part_render', '__return_false' );
+		}
+
+		$this->assertStringContainsString( 'href="https://example.org/secondary"', $html );
+		$this->assertStringContainsString( 'href="https://example.org/desktop-secondary"', $html );
+		$this->assertStringNotContainsString( 'p-footer-cta__primary-btn', $html );
+	}
+
 	public function test_text_preserves_markup_and_responsive_variants() {
 		set_theme_mod( 'footer-cta-text', '<strong>Mobile</strong><script>alert(1)</script>' );
 		set_theme_mod( 'footer-cta-text-pc', 'Desktop' );

@@ -56,7 +56,7 @@ if ( ! $text && ( ! $primary_btn_label || ! $primary_btn_url ) && ( ! $secondary
 				<?php elseif ( $secondary_btn_label && $secondary_btn_url ) : // has secondary btn. ?>
 
 					<div class="c-row__col c-row__col--1-1">
-						<?php Helper::get_template_part( 'footer-cta/primary-btn' ); ?>
+						<?php Helper::get_template_part( 'footer-cta/secondary-btn' ); ?>
 					</div>
 
 				<?php endif; ?>
