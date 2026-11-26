@@ -6,21 +6,19 @@ const { JSDOM } = require( 'jsdom' );
 
 const bundle = readFileSync( resolve( __dirname, '../../dist/js/app.js' ), 'utf8' );
 
-function render( t, content = '<div id="footer-sticky-nav" aria-hidden="true"><button class="p-footer-cta__close-btn">Close</button></div>' ) {
+function render( t, { delay = 300, initialScroll = 0, content = '<div id="footer-sticky-nav" aria-hidden="true"><button class="p-footer-cta__close-btn">Close</button></div>' } = {} ) {
 	const dom = new JSDOM( `<body style="margin-bottom: 80px">${ content }</body>`, {
 		runScripts: 'outside-only',
 		url: 'https://example.org/subdir/page',
 	} );
 	t.after( () => dom.window.close() );
 	const { window } = dom;
-	window.snow_monkey_footer_cta = { delay: 300 };
+	window.snow_monkey_footer_cta = { delay };
 	window.snow_monkey = { home_url: 'https://example.org/subdir/' };
-	let time = Date.now();
-	window.Date.now = () => time;
+	window.document.documentElement.scrollTop = initialScroll;
 	window.eval( bundle );
 	window.document.dispatchEvent( new window.Event( 'DOMContentLoaded' ) );
 	const scroll = ( top ) => {
-		time += 151;
 		window.document.documentElement.scrollTop = top;
 		window.dispatchEvent( new window.Event( 'scroll' ) );
 	};
@@ -45,6 +43,16 @@ test( 'shows and hides the CTA at the configured scroll threshold', ( t ) => {
 	assert.equal( events, 2 );
 } );
 
+test( 'shows the CTA at 0px without a scroll event', ( t ) => {
+	const { window } = render( t, { delay: '0' } );
+	assert.equal( window.document.getElementById( 'footer-sticky-nav' ).getAttribute( 'aria-hidden' ), 'false' );
+} );
+
+test( 'uses the scroll position at initialization', ( t ) => {
+	const { window } = render( t, { initialScroll: 300 } );
+	assert.equal( window.document.getElementById( 'footer-sticky-nav' ).getAttribute( 'aria-hidden' ), 'false' );
+} );
+
 test( 'closing the CTA clears spacing, saves a cookie and removes the scroll handler', ( t ) => {
 	const { dom, window, scroll } = render( t );
 	const wrapper = window.document.getElementById( 'footer-sticky-nav' );
@@ -61,9 +69,9 @@ test( 'closing the CTA clears spacing, saves a cookie and removes the scroll han
 } );
 
 test( 'handles a page without a CTA or without a close button', ( t ) => {
-	const empty = render( t, '<main>Content</main>' );
+	const empty = render( t, { content: '<main>Content</main>' } );
 	assert.doesNotThrow( () => empty.scroll( 400 ) );
-	const { window, scroll } = render( t, '<div id="footer-sticky-nav" aria-hidden="true"></div>' );
+	const { window, scroll } = render( t, { content: '<div id="footer-sticky-nav" aria-hidden="true"></div>' } );
 	scroll( 300 );
 	assert.equal( window.document.getElementById( 'footer-sticky-nav' ).getAttribute( 'aria-hidden' ), 'false' );
 } );

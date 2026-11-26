@@ -1,6 +1,6 @@
 <?php
 
-use Snow_Monkey\Plugin\FooterCTA\App\Controller\Front;
+use Framework\Helper;
 
 class Footer_CTA_Test extends WP_UnitTestCase {
 
@@ -86,10 +86,16 @@ class Footer_CTA_Test extends WP_UnitTestCase {
 
 	public function test_built_assets_and_scroll_delay_are_registered() {
 		set_theme_mod( 'footer-cta-delay', 300 );
-		$front = new Front();
-		$front->_wp_enqueue_scripts();
+		$theme_script_handle       = Helper::get_main_script_handle();
+		$sticky_nav_script_handle = $theme_script_handle . '-footer-sticky-nav';
+		wp_register_script( $sticky_nav_script_handle, 'https://example.org/footer-sticky-nav.js' );
+		wp_enqueue_script( $sticky_nav_script_handle );
+
+		do_action( 'wp_enqueue_scripts' );
 		$script = wp_scripts()->registered['snow-monkey-footer-cta'];
 		$style  = wp_styles()->registered['snow-monkey-footer-cta'];
+		$this->assertSame( array( $theme_script_handle ), $script->deps );
+		$this->assertFalse( wp_script_is( $sticky_nav_script_handle, 'enqueued' ) );
 		$this->assertStringEndsWith( '/dist/js/app.js', $script->src );
 		$this->assertStringEndsWith( '/dist/css/app.css', $style->src );
 		$this->assertFileExists( SNOW_MONKEY_FOOTER_CTA_PATH . '/dist/js/app.js' );

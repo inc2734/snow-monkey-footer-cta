@@ -16,6 +16,14 @@ class Front {
 	 */
 	public function __construct() {
 		add_action( 'wp_enqueue_scripts', array( $this, '_wp_enqueue_scripts' ) );
+		add_action(
+			'wp_enqueue_scripts',
+			function () {
+				// The CTA replaces the sticky navigation and manages its own visibility.
+				wp_dequeue_script( Helper::get_main_script_handle() . '-footer-sticky-nav' );
+			},
+			20
+		);
 		add_action( 'inc2734_wp_customizer_framework_load_styles', array( $this, '_load_styles' ), 11 );
 
 		add_filter( 'inc2734_wp_view_controller_expand_get_template_part', array( $this, '_expand_get_template_part' ), 11, 2 );
@@ -51,7 +59,7 @@ class Front {
 		wp_enqueue_script(
 			'snow-monkey-footer-cta',
 			SNOW_MONKEY_FOOTER_CTA_URL . '/dist/js/app.js',
-			array( Helper::get_main_script_handle() . '-footer-sticky-nav' ),
+			array( Helper::get_main_script_handle() ),
 			filemtime( SNOW_MONKEY_FOOTER_CTA_PATH . '/dist/js/app.js' ),
 			true
 		);
@@ -60,7 +68,7 @@ class Front {
 			'snow-monkey-footer-cta',
 			'snow_monkey_footer_cta',
 			array(
-				'delay' => get_theme_mod( 'footer-cta-delay' ),
+				'delay' => get_theme_mod( 'footer-cta-delay', 0 ),
 			)
 		);
 	}

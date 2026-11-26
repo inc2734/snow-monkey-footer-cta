@@ -11,46 +11,19 @@ const onDOMContentLoaded = () => {
     return document.documentElement.scrollTop || document.body.scrollTop;
   };
 
-  const throttle = (callback, delay) => {
-    let time = Date.now();
-    return (...args) => {
-      if ((time + delay - Date.now()) < 0) {
-        callback.apply(this, args);
-        time = Date.now();
-      }
-    };
-  };
+  const updateVisibility = () => {
+    const shouldShow = scrollTop() >= snow_monkey_footer_cta.delay;
+    const ariaHidden = String(! shouldShow);
+    if (wrapper.getAttribute('aria-hidden') === ariaHidden) {
+      return;
+    }
 
-  let ariaHidden = wrapper.getAttribute('aria-hidden');
-
-  const show = () => {
-    ariaHidden = 'false';
     wrapper.setAttribute('aria-hidden', ariaHidden);
     addCustomEvent(wrapper, 'initFooterStickyNav');
   };
 
-  const hide = () => {
-    ariaHidden = 'true';
-    wrapper.setAttribute('aria-hidden', ariaHidden);
-    addCustomEvent(wrapper, 'initFooterStickyNav');
-  };
-
-  const handleScroll = throttle(
-    () => {
-      if (snow_monkey_footer_cta.delay <= scrollTop()) {
-        if ('false' !== ariaHidden) {
-          show();
-        }
-      } else {
-        if ('true' !== ariaHidden) {
-          hide();
-        }
-      }
-    },
-    150
-  );
-
-  window.addEventListener('scroll', handleScroll, false);
+  updateVisibility();
+  window.addEventListener('scroll', updateVisibility, false);
 
   const setHiddenCookie = () => {
     const getPath = () => {
@@ -73,11 +46,11 @@ const onDOMContentLoaded = () => {
     );
   };
 
-  const onCloseBtnClick = (event) => {
+  const onCloseBtnClick = () => {
     wrapper.parentNode.removeChild(wrapper);
     document.body.style['marginBottom'] = '';
     setHiddenCookie();
-    window.removeEventListener('scroll', handleScroll, false);
+    window.removeEventListener('scroll', updateVisibility, false);
   };
 
   const closeBtn = wrapper.querySelector('.p-footer-cta__close-btn');
